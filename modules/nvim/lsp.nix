@@ -1,11 +1,5 @@
 {...}:
 
-let
-  enableWithTempl = {
-    enable = true;
-    filetypes = ["html" "templ"];
-  };
-in
 {
   programs.nixvim.plugins = {
     lsp-format.enable = true;
