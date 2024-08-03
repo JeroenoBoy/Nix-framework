@@ -118,6 +118,7 @@ in
       xdg-desktop-portal-hyprland
       xdg-desktop-portal-wlr
       networkmanager networkmanagerapplet
+      p7zip
     ];
   };
 
