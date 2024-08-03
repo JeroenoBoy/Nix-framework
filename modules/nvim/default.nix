@@ -12,6 +12,7 @@
   programs.nixvim = {
     enable = true;
     colorschemes.onedark.enable = true;
+    clipboard.register = "unnamedplus";
 
     globalOpts = {
       number = true;
@@ -26,6 +27,8 @@
       softtabstop = 0;
     };
 
-    clipboard.register = "unnamedplus";
+    filetype.extension = {
+      "templ" = "templ";
+    };
   };
 }

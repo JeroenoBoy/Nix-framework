@@ -1,5 +1,11 @@
 {...}:
 
+let
+  enableHtmlWithTempl = {
+    enable = true;
+    filetypes = ["html" "templ"];
+  };
+in
 {
   programs.nixvim.plugins = {
     lsp-format.enable = true;
@@ -19,19 +25,20 @@
         sqls.enable = true;
 
         # Web
-        html.enable = true;
-        emmet-ls.enable = true;
-        htmx.enable = true;
+        html = enableHtmlWithTempl;
+        emmet-ls = enableHtmlWithTempl;
+        htmx = enableHtmlWithTempl;
         cssls.enable = true;
         svelte.enable = true;
         tsserver.enable = true;
         templ = {
           enable = true;
           autostart = true;
+          filetypes = ["templ"];
         };
         tailwindcss = {
           enable = true;
-          filetypes = ["html" "templ" "javascript" "typescript" "react"];
+          filetypes = ["html" "css" "templ" "javascript" "typescript" "react"];
         };
 
         # Backend
