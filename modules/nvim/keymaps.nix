@@ -47,11 +47,6 @@
     }
 
     {
-      action = "<cmd>tabs";
-      key = "<leader>tl<CR>";
-      options.desc = "List all tabs";
-    }
-    {
       action = "<cmd>tabnew<CR>";
       key = "<leader>tn";
       options.desc = "Create a new tab";
