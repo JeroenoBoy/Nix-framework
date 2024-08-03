@@ -12,7 +12,11 @@
   programs.nixvim = {
     enable = true;
     colorschemes.onedark.enable = true;
-    clipboard.register = "unnamedplus";
+
+    clipboard = {
+      register = "unnamedplus";
+      providers.wl-copy.enable = true;
+    };
 
     globalOpts = {
       number = true;
