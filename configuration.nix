@@ -102,6 +102,12 @@ in
 
   environment = {
     shells = with pkgs; [ zsh ];
+    shellAliases = {
+      "stegothewise" = "fortune | cowsay -f stegosaurus";
+      "aquarium" = "asciiquarium";
+      "pipes" = "pipes.sh -t 3";
+    };
+
     variables = {
       EDITOR = "nvim";
       SYSTEM_EDITOR = "nvim";
@@ -119,6 +125,10 @@ in
       xdg-desktop-portal-wlr
       networkmanager networkmanagerapplet
       p7zip
+
+      #Very Important
+      sl cowsay fortune asciiquarium
+      pipes
     ];
   };
 
