@@ -2,7 +2,9 @@
 
 {
   imports = [
-    ./nvim
+    ./nixvim
+    ./environment.nix
+    ./flatpak.nix
     ./zsh.nix
     ./steam.nix
   ];
