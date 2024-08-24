@@ -53,6 +53,7 @@ in
     desktopManager.gnome.enable = true;
   };
 
+  services.flatpak.enable = true;
   services.gnome = {
     core-utilities.enable = false;
   };
@@ -116,10 +117,9 @@ in
     systemPackages = with pkgs; [
       home-manager
       fastfetch
-      kitty
-      btop
-      brightnessctl
+      kitty btop
       ffmpeg
+      brightnessctl
       xdg-desktop-portal
       xdg-desktop-portal-hyprland
       xdg-desktop-portal-wlr
