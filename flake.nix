@@ -1,5 +1,5 @@
 {
-  description = "LaiOS: Lix And I Operating System";
+  description = "LaiOS: My nix config";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
