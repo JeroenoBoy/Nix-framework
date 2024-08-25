@@ -134,6 +134,7 @@ in
       .modules-right, .modules-left, .modules-center {
         background-color: ${bg-color};
         border-radius: ${border-radius};
+        border: 1px solid rgba(255, 255, 255, 0.2);
       }
 
       .modules-left, .modules-right {
