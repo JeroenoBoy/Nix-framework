@@ -25,10 +25,10 @@
       xdg-desktop-portal-wlr
       networkmanager networkmanagerapplet
       p7zip
+      lazygit
 
       #Very Important
-      sl cowsay fortune asciiquarium
-      pipes
+      sl cowsay fortune asciiquarium pipes
     ];
   };
 }
