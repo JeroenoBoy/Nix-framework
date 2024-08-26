@@ -117,7 +117,6 @@ in
         margin-top: 6px;
         margin-bottom: 6px;
         border-radius: 30px;
-        border-radius: 30px;
         padding: 0px 0px;
         transition: all .3s ease-out;
       }

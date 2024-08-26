@@ -4,9 +4,10 @@
     font-manager
     wofi-emoji
     hypridle
-    wcalc
+    wcalc jq
     hyprshot
     thefuck
+    playerctl
 
     jetbrains-toolbox
     devenv
@@ -25,7 +26,7 @@
     prismlauncher
 
     vlc
-    jellyfin-media-player
-    spotify spotdl
+    jellyfin-media-player feishin sonixd
+    spotify
   ];
 }

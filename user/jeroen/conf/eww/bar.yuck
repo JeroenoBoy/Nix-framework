@@ -1,0 +1,74 @@
+;; Variables
+
+(defvar battery_icons_count 11)
+
+(defpoll battery_output :interval "10s" "sh scripts/battery.sh")
+(defpoll cpu_temp :interval "10s" :initial "0" "sh scripts/cpu_temp.sh")
+(defpoll time :interval "1s" `date "+%a %d %b %H:%M"`)
+
+(deflisten workspaces_str "sh scripts/workspaces.sh")
+      
+;; Window
+
+(defwindow topbar
+  :class "topbar"
+  :monitor 0
+  :geometry (geometry :width "128%" :x "0%" :y "6px" :anchor "t c")
+  :stacking "fg"
+  :exclusive true
+
+  (box :class "container"
+       :orientation "horizontal"
+       :halign "fill"
+       :hexpand true
+    ;   :space-evenly false
+
+    (section :halign "start"
+      (battery_status)
+      (ram_status)
+      (cpu_status)
+      (disk_status)
+      (temp_status))
+
+    (literal :class "section-workspaces" :halign "center" :orientation "horizontal" :content workspaces_str)
+    ;(section :halign "center"
+     ; (workspaces))
+
+    (section :halign "end"
+      (systray :spacing 8 :icon-size 16)
+      "${time}"
+      (button "Hello"))))
+
+;; Widgets
+
+(defwidget section [halign]
+  (box :class "section"
+       :halign halign
+       :space-evenly false
+       :spacing 12
+    (children)))
+
+(defwidget battery_status []
+  (box :class "module bat"
+    battery_output))
+
+(defwidget ram_status []
+  (box :class "module"
+    "    ${round(EWW_RAM.used_mem_perc, 0)}%"))
+
+(defwidget cpu_status []
+  (box :class "module"
+    "    ${round(EWW_CPU.avg, 2)}%"))
+
+(defwidget disk_status []
+  (box :class "module"
+    "    ${round(EWW_DISK["/"].used_perc, 0)}%"))
+
+(defwidget temp_status []
+  (box :class "module"
+    " ${round(cpu_temp, 0)}°C"))
+
+(defwidget workspaces [] 
+;(box :class "workspaces" :space-evenly false (box :class "workspace active" "")(box :class "workspace" "")(box :class "workspace" "")(box :class "workspace" "")(box :class "workspace" "")(box :class "workspace" "")))
+ ;"${workspaces_str}")
+  (literal :content workspaces_str))

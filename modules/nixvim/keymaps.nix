@@ -37,12 +37,12 @@
     }
     {
       action = "<cmd>vsplit<CR>";
-      key = "<leader>bs";
+      key = "<leader>ws";
       options.desc = "Horizontal split";
     }
     {
       action = "<cmd>split<CR>";
-      key = "<leader>bv";
+      key = "<leader>wv";
       options.desc = "Vertical split";
     }
 

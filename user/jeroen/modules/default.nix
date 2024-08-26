@@ -3,6 +3,7 @@
 {
   imports = [
     #./firefox.nix
+    ./eww.nix
     ./gtk.nix
     ./hypridle.nix
     ./hyprlock.nix
