@@ -6,8 +6,10 @@
 (defpoll cpu_temp :interval "10s" :initial "0" "sh scripts/cpu_temp.sh")
 (defpoll time :interval "1s" `date "+%a %d %b %H:%M"`)
 
-(deflisten workspaces_str "sh scripts/workspaces.sh")
-      
+(deflisten active_workspace :initial 1 "sh scripts/hypr_workspaces.sh active")
+(deflisten current_workspaces :initial "[1]" "sh scripts/hypr_workspaces.sh all")
+(deflisten notification_stats :initial "{\"count\": 0, \"dnd\": false}" "swaync-client --subscribe")
+
 ;; Window
 
 (defwindow topbar
@@ -30,19 +32,18 @@
       (disk_status)
       (temp_status))
 
-    (literal :class "section-workspaces" :halign "center" :orientation "horizontal" :content workspaces_str)
-    ;(section :halign "center"
-     ; (workspaces))
+    (box :class "section-workspaces" :halign "center" :orientation "horizontal"
+      (workspaces))
 
-    (section :halign "end"
+    (section :halign "end" :style "padding-right: 0.9em"
       (systray :spacing 8 :icon-size 16)
       "${time}"
-      (button "Hello"))))
+      (notification_status))))
 
 ;; Widgets
 
-(defwidget section [halign]
-  (box :class "section"
+(defwidget section [halign ?style]
+  (box :class "section" :style style
        :halign halign
        :space-evenly false
        :spacing 12
@@ -69,6 +70,18 @@
     " ${round(cpu_temp, 0)}°C"))
 
 (defwidget workspaces [] 
-;(box :class "workspaces" :space-evenly false (box :class "workspace active" "")(box :class "workspace" "")(box :class "workspace" "")(box :class "workspace" "")(box :class "workspace" "")(box :class "workspace" "")))
- ;"${workspaces_str}")
-  (literal :content workspaces_str))
+  (box :class "workspaces" :space-evenly false
+    (for i in current_workspaces
+      (box :class {i == active_workspace ? "workspace active" : "workspace"}
+        ""))))
+
+(defwidget notification_status []
+  (button :class "module"
+          :onclick "swaync-client -t -sw"
+          :onrightclick "swaync-client -d -sw"
+    (box
+      {notification_stats.dnd ? "" : ""}
+      (box :class "notification-widget"
+           :style {notification_stats.count > 0 ? "" : "color: transparent"}
+        "")))
+    )

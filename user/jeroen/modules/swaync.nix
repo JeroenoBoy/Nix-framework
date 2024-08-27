@@ -13,22 +13,29 @@
       widgets = ["inhibitors" "menubar" "title" "dnd" "volume" "mpris" "notifications"];
     };
     style = ''
+      * {
+        box-shadow: unset;
+      }
+
       .control-center, .notification {
-        border: double 2px transparent;
+        background: #222233;
         border-radius: 10px;
-        /* opacity: 0.8; */
-        background-image: linear-gradient(45deg,#144,#226), linear-gradient(135deg, #33ccff, #00ff99);
-        background-origin: border-box;
-        background-clip: content-box, border-box;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .control-center {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -4px rgba(0, 0, 0, 0.2);
       }
 
       .control-center .notification {
-        border: none;
+        background: #222233;
         border-radius: 10px;
-        background: #114;
-        background-image: unset;
-        background-origin: unset;
-        background-clip: unset;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -4px rgba(0, 0, 0, 0.2);
+      }
+      
+      .widget-mpris-player {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -4px rgba(0, 0, 0, 0.2);
       }
 
       .notification-group, notification-row, .notification-background {

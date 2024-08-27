@@ -28,7 +28,7 @@
       lazygit
 
       #Very Important
-      sl cowsay fortune asciiquarium pipes
+      sl cowsay fortune asciiquarium pipes cava
     ];
   };
 }

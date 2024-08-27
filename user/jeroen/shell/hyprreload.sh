@@ -1,9 +1,9 @@
 #!/usr/bin/sh
 
-pkill waybar
 pkill swaync
 pkill hypridle
+pkill eww
 
 hyprctl reload
 sh ~/.sh/wallpaper-init.sh
-waybar & swaync & hypridle
+swaync & hypridle & eww open topbar

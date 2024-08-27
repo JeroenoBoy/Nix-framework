@@ -39,12 +39,12 @@ window {
 
 .workspaces {
     font-size: 0;
-    padding: 11px 6px;
+    padding: 12px 6px;
 }
 
 .workspace {
     margin: 0px 4px;
-    padding: 0px 15px;
+    padding: 0px 16px;
     border-radius: 14px;
     background-color: #8888aa;
 
@@ -71,4 +71,10 @@ window {
     padding: 0px 16px;
     background-color: #ff0022;
     color: white;
+}
+
+.notification-widget {
+    color: red;
+    font-size: .7em;
+    margin-bottom: .8em;
 }

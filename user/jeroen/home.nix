@@ -1,9 +1,14 @@
-{ config, pkgs, version, ... }:
+{ config, pkgs, ... }:
 
 {
+  imports = [
+    ./pkgs.nix
+    ./modules
+  ];
+
   home.username = "jeroen";
   home.homeDirectory = "/home/jeroen";
-  home.stateVersion = version; 
+  home.stateVersion = "24.05"; 
   
   nixpkgs.config.allowUnfree = true;
 
