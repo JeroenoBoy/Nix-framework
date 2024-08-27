@@ -2,3 +2,5 @@
 ;; Waybar is easier but whatever, I need the power
 
 (include "./bar.yuck")
+(include "./calendar.yuck")
+(include "./util.yuck")

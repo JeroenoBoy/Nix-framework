@@ -1,0 +1,3 @@
+(defwidget closer [window]
+  (button :onclick "eww close ${window} && eww close ${window}-closer"
+          :onrightclick "eww close ${window} && eww close ${window}-closer"))

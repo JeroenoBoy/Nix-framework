@@ -7,6 +7,7 @@ window {
     padding: 0;
     margin: 0;
 
+    font-family: JetBrainsMono Nerd Font;
     font-size: 14px;
     color: #ccccff;
 }
@@ -16,7 +17,8 @@ window {
 }
 
 .section-workspaces,
-.section {
+.section,
+.window {
     background-color: #222233;
     border-radius: 3.5em;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -29,6 +31,17 @@ window {
 
 .section {
     padding: 8px 16px;
+}
+
+.header:not(calendar) {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 0.8em;
+    padding: 2px 40px;
+}
+
+.window {
+    padding: 8px 8px;
+    border-radius: 10px;
 }
 
 .module {
@@ -54,6 +67,25 @@ window {
 .workspace.active {
     padding: 0px 30px;
     background-color: #ccccff;
+}
+
+button {}
+
+.calendar {
+    font-family: JetBrainsMono Nerd Font;
+}
+
+calendar.button {
+    color: #9999ff;
+}
+
+calendar.highlight {
+    color: #9999ff;
+}
+
+calendar:selected {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 0.8em;
 }
 
 .warn {

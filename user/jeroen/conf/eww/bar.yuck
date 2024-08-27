@@ -19,11 +19,11 @@
   :stacking "fg"
   :exclusive true
 
-  (box :class "container"
-       :orientation "horizontal"
-       :halign "fill"
-       :hexpand true
-    ;   :space-evenly false
+  (centerbox :class "container"
+       ;:orientation "horizontal"
+       ;:halign "fill"
+       ;:hexpand true
+       ;:space-evenly false
 
     (section :halign "start"
       (battery_status)
@@ -37,7 +37,7 @@
 
     (section :halign "end" :style "padding-right: 0.9em"
       (systray :spacing 8 :icon-size 16)
-      "${time}"
+      (button :onclick "${EWW_CMD} open calendar_window-closer; ${EWW_CMD} open calendar_window" "${time}")
       (notification_status))))
 
 ;; Widgets
@@ -55,19 +55,19 @@
 
 (defwidget ram_status []
   (box :class "module"
-    "    ${round(EWW_RAM.used_mem_perc, 0)}%"))
+    " ${round(EWW_RAM.used_mem_perc, 0)}%"))
 
 (defwidget cpu_status []
   (box :class "module"
-    "    ${round(EWW_CPU.avg, 2)}%"))
+    " ${round(EWW_CPU.avg, 2)}%"))
 
 (defwidget disk_status []
   (box :class "module"
-    "    ${round(EWW_DISK["/"].used_perc, 0)}%"))
+    " ${round(EWW_DISK["/"].used_perc, 0)}%"))
 
 (defwidget temp_status []
   (box :class "module"
-    " ${round(cpu_temp, 0)}°C"))
+    "${round(cpu_temp, 0)}°C"))
 
 (defwidget workspaces [] 
   (box :class "workspaces" :space-evenly false
