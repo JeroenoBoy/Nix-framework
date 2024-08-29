@@ -22,7 +22,6 @@
     gnome.gnome-tweaks
     gnome.gnome-themes-extra
     nicotine-plus
-    webcord
     libnotify
     
     prismlauncher
