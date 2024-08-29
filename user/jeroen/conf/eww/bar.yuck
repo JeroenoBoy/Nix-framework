@@ -9,6 +9,7 @@
 (deflisten active_workspace :initial 1 "sh scripts/hypr_workspaces.sh active")
 (deflisten current_workspaces :initial "[1]" "sh scripts/hypr_workspaces.sh all")
 (deflisten notification_stats :initial "{\"count\": 0, \"dnd\": false}" "swaync-client --subscribe")
+(defpoll time_precise :interval "1s" `date "+%a %d %b %H:%M:%S"`)
 
 ;; Window
 
@@ -32,12 +33,14 @@
       (disk_status)
       (temp_status))
 
-    (box :class "section-workspaces" :halign "center" :orientation "horizontal"
+    (button :class "section-workspaces"
+         :halign "center"
+         :onclick "${EWW_CMD} open --toggle start_menu-closer; ${EWW_CMD} open --toggle start_menu"
       (workspaces))
 
     (section :halign "end" :style "padding-right: 0.9em"
-      (systray :spacing 8 :icon-size 16)
-      (button :onclick "${EWW_CMD} open calendar_window-closer; ${EWW_CMD} open calendar_window" "${time}")
+      (systray :spacing 12 :icon-size 16 :class "tray")
+      (button :onclick "${EWW_CMD} open --toggle calendar_window-closer; ${EWW_CMD} open --toggle calendar_window" "${time}")
       (notification_status))))
 
 ;; Widgets
@@ -46,28 +49,31 @@
   (box :class "section" :style style
        :halign halign
        :space-evenly false
-       :spacing 12
+       :spacing 20
     (children)))
 
 (defwidget battery_status []
-  (box :class "module bat"
+  (box :class {EWW_BATTERY.BAT1.capacity > 30 ? "module bat"
+                : EWW_BATTERY.BAT1.capacity > 10 ? "module bat warn" 
+                : EWW_BATTERY.BAT1.capacity > 5 ? "module bat critical"
+                : "module bat supercrit" }
     battery_output))
 
 (defwidget ram_status []
   (box :class "module"
-    " ${round(EWW_RAM.used_mem_perc, 0)}%"))
+    "  ${round(EWW_RAM.used_mem_perc, 0)}%"))
 
 (defwidget cpu_status []
   (box :class "module"
-    " ${round(EWW_CPU.avg, 2)}%"))
+    "  ${round(EWW_CPU.avg, 2)}%"))
 
 (defwidget disk_status []
   (box :class "module"
-    " ${round(EWW_DISK["/"].used_perc, 0)}%"))
+    "  ${round(EWW_DISK["/"].used_perc, 0)}%"))
 
 (defwidget temp_status []
   (box :class "module"
-    "${round(cpu_temp, 0)}°C"))
+    " ${round(cpu_temp, 0)}°C"))
 
 (defwidget workspaces [] 
   (box :class "workspaces" :space-evenly false

@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    mpvpaper
+    mpvpaper hyprpaper # Switch between the 2
     font-manager
     wofi-emoji
     hypridle
@@ -8,6 +8,8 @@
     hyprshot
     thefuck
     playerctl
+
+    discord
 
     jetbrains-toolbox
     devenv

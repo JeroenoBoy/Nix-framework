@@ -1,0 +1,98 @@
+;; Variables
+
+(defpoll user :interval "10m" "echo $USER")
+(defpoll weather :interval "10m" :initial "{}" "sh scripts/weather.sh")
+(deflisten player_data :initial "{\"found\":false}" "sh scripts/player.sh activePlayer --listen")
+
+;; Windows
+
+(defwindow start_menu :monitor 0
+                      :geometry (geometry :y "4px" :anchor "t c")
+                      :stacking "overlay"
+  (box :class "window"
+       :orientation "vertical"
+       :space-evenly true
+       :spacing 8
+    (box :space-evenly false :spacing 8
+      (box :orientation "vertical" :spacing 8
+        (profile)
+        (box :class "menu-module"))
+      (box :orientation "vertical" :spacing 8
+        (weather)
+        (player)
+        (box :class "menu-module")
+        (power)))))
+
+
+(defwindow start_menu-closer :monitor 0
+                             :geometry (geometry :width "100%" :height "100%")
+                             :stacking "overlay"
+  (closer :window "start_menu"))
+
+;; Widgets
+
+(defwidget profile []
+  (box :class "menu-module" :orientation "vertical" :space-evenly false
+    (box :class "profile-title" "Hi, ${user}")
+    (box :class "profile-image"
+         :width 196
+         :height 196
+         :style "background-image: url('/var/lib/AccountsService/icons/${user}')")
+    ))
+
+(defwidget weather []
+  (box :class "menu-module weather-module" :space-evenly false
+    (box :class "weather-emoji" {weather.emoji})
+    (box :orientation "vertical" :space-evenly false :valign "center"
+      (box :class "weather-temp" {weather.temprature})
+      (box :class "weather-country" {weather.country}))))
+
+(defwidget power []
+  (box :class "menu-module power"
+       :orientation "h"
+       :space-evenly true
+       :valign "fill"
+       :halign "fill"
+    (powerwidget :command "eww close start_menu start_menu-closer & setsid hyprlock &> /dev/null" :text "" :padding "0.35")
+    (powerwidget :command "systemctl suspend" :text "" :padding "0.35")
+    (powerwidget :command "shutdown --now" :text "" :padding "0.27")
+    (powerwidget :command "reboot --now" :text "" :padding "0.3")
+    (powerwidget :command "exit" :text "")))
+
+(defwidget powerwidget [text command ?padding]
+  (box :halign "center" :valign "center" :width 48 :height 48 
+    (button :class "" :onclick {command}
+      (label :style "padding-right: ${padding == "" ? "0.18" : padding}em"
+             :justify "center"
+             :text {text})))
+  )
+
+(defwidget player []
+  (box :orientation "v"
+       :space-evenly true
+       :style "background-image: url('${player_data.art_url}');"
+       :class "menu-module player player-bg"
+    (box :space-evenly false
+         :orientation "v"
+         :visible {player_data.found}
+      (box :class "player-title"
+        (label :truncate true :limit-width 16 :text "${player_data.title}"))
+      (box :class "player-artist"
+        (label :truncate true :limit-width 16 :text "${player_data.artist}")))
+    (box :space-evenly false
+         :orientation "v"
+         :valign "center"
+         :visible {!player_data.found}
+      (box :class "player-title" "No music playing"))
+    (box :orientation "h" 
+         :halign "fill"
+         :class "player-buttons"
+         :space-evenly true
+      (box :class "box-for-space")
+      (button :onclick "playerctl previous -p \"${player_data.player}\"" "")
+      (button :onclick "playerctl play-pause -p \"${player_data.player}\"" 
+        {player_data.status == "Playing" ? "" : ""})
+      (button :onclick "playerctl next -p \"${player_data.player}\"" "")
+      (box :class "box-for-space"))))
+    ;(box :orientation "h" :class "music-slider" :space-evenly "false" :halign "center" 
+      ;(scale :min 0 :max 101 :value {musicpos} :active "false"))))

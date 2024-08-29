@@ -1,0 +1,225 @@
+$font-color: #ccccff;
+$bg-color: #222233;
+$font-highlight-color: #9999ff;
+$border-color: rgba(255, 255, 255, 0.1);
+$border: 1px solid $border-color;
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.2),
+    0 4px 6px -4px rgba(0, 0, 0, 0.2);
+$text-shadow: 0 0 2px rgba(0, 0, 0, 0.5),
+    0 4px 8px rgba(0, 0, 0, 0.5);
+
+* {
+    all: unset;
+}
+
+window {
+    background: rgba(0, 0, 0, 0);
+    padding: 0;
+    margin: 0;
+
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 14px;
+    color: $font-color;
+}
+
+.container {
+    margin: 0px 20px;
+}
+
+.section-workspaces,
+.section,
+.window {
+    background-color: $bg-color;
+    border-radius: 3.5em;
+    border: $border;
+}
+
+.section-workspaces {
+    padding: 0px;
+    margin: 0px;
+}
+
+.section {
+    padding: 8px 16px;
+}
+
+.header:not(calendar) {
+    background-color: $border-color;
+    border-radius: 0.8em;
+    padding: 2px 40px;
+}
+
+.window {
+    padding: 8px 8px;
+    border-radius: 10px;
+}
+
+.module {
+    padding: 0px;
+    transition: all .3s ease-out;
+    border-radius: 30px;
+}
+
+.menu-module {
+    background-color: #222233;
+    border-radius: 10px;
+    padding: 8px;
+    transition: all .3s ease-out;
+    box-shadow: $shadow-lg
+}
+
+.workspaces {
+    font-size: 0;
+    padding: 12px 6px;
+}
+
+.workspace {
+    margin: 0px 4px;
+    padding: 0px 16px;
+    border-radius: 14px;
+    background-color: #8888aa;
+
+    transition: all .25s ease-out;
+}
+
+.workspace.active {
+    padding: 0px 30px;
+    background-color: #ccccff;
+}
+
+.tray menu {
+    background-color: $bg-color;
+    border: $border;
+    padding: 8px 8px;
+    border-radius: 10px;
+}
+
+.tray menu>* {
+    margin-top: 8px
+}
+
+.tray label {
+    margin-top: 0;
+    transition: background .25s ease-out;
+}
+
+.tray label:hover {
+    background: $border-color
+}
+
+.calendar {
+    font-family: JetBrainsMono Nerd Font;
+}
+
+calendar {
+    &.button {
+        color: #9999ff;
+    }
+
+    &.highlight {
+        color: #9999ff
+    }
+
+    :selected {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 0.8em;
+    }
+}
+
+.profile-title {
+    margin: 10px 0px 15px 0px;
+    color: $font-highlight-color;
+    font-size: 1.5em;
+}
+
+.profile-image {
+    border-radius: 100%;
+    background-size: cover;
+}
+
+.weather-module {
+    font-size: 1.5em;
+}
+
+.weather-emoji {
+    font-size: 2em;
+    margin: 0px .75em 0px .75em;
+}
+
+.weather-temp {
+    color: $font-highlight-color;
+}
+
+.weather-temp,
+.weather-country {
+    margin: .25em .5em;
+}
+
+.player {
+    font-size: 1.3em;
+}
+
+.player-bg {
+    background-size: cover;
+    background-position: center;
+}
+
+.player-title {
+    font-weight: bold;
+    text-shadow: $text-shadow
+}
+
+.player-artist {
+    font-size: 0.8em;
+    text-shadow: $text-shadow
+}
+
+.player-buttons>button {
+    margin: 8px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 100%;
+    transition: all 0.25s ease-out;
+}
+
+
+.player-buttons>button:hover {
+    color: $font-highlight-color;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.power {
+    font-size: 1.4em;
+}
+
+.power button {
+    color: $font-highlight-color;
+    transition: all 0.25s ease-out;
+    border-radius: 100%;
+}
+
+.power button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.warn {
+    padding: 0px 6px;
+    background-color: #aa5500;
+}
+
+.crit,
+.critical {
+    padding: 0px 6px;
+    background-color: #990022;
+}
+
+.supercrit {
+    padding: 0px 16px;
+    background-color: #ff0022;
+    color: white;
+}
+
+.notification-widget {
+    color: red;
+    font-size: .7em;
+    margin-bottom: .8em;
+}

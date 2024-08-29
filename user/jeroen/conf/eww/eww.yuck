@@ -3,4 +3,5 @@
 
 (include "./bar.yuck")
 (include "./calendar.yuck")
+(include "./start.yuck")
 (include "./util.yuck")
