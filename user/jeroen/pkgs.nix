@@ -8,6 +8,7 @@
     hyprshot
     thefuck
     playerctl
+    alsa-utils
 
     discord
 

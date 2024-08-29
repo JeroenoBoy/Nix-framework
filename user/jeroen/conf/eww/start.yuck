@@ -3,6 +3,8 @@
 (defpoll user :interval "10m" "echo $USER")
 (defpoll weather :interval "10m" :initial "{}" "sh scripts/weather.sh")
 (deflisten player_data :initial "{\"found\":false}" "sh scripts/player.sh activePlayer --listen")
+(deflisten brightness :initial 0 "sh scripts/brightness.sh --listen")
+(defpoll volume :interval "10s" :initial 0 "sh scripts/volume.sh")
 
 ;; Windows
 
@@ -16,7 +18,7 @@
     (box :space-evenly false :spacing 8
       (box :orientation "vertical" :spacing 8
         (profile)
-        (box :class "menu-module"))
+        (sliders))
       (box :orientation "vertical" :spacing 8
         (weather)
         (player)
@@ -66,6 +68,24 @@
              :justify "center"
              :text {text})))
   )
+
+(defwidget sliders []
+  (box :class "menu-module" :space-evenly true
+    (box :class "slider audio-slider" :orientation "v" :vexpand true :space-evenly false
+      (scale :orientation "v"
+             :vexpand true
+             :flipped true
+             :onchange "amixer sset Master {}%"
+             :min 0 :max 100 :value {volume})
+      (box :class "icon" ""))
+    (box :class "slider brightness-slider" :orientation "v" :vexpand true :space-evenly false
+      (scale :orientation "v"
+             :vexpand true
+             :flipped true
+             :onchange "brightnessctl set {}%"
+             :min 0 :max 100 :value {brightness})
+      (box :class "icon" ""))))
+
 
 (defwidget player []
   (box :orientation "v"

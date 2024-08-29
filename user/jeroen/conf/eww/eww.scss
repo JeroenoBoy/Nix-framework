@@ -187,6 +187,52 @@ calendar {
     background: rgba(0, 0, 0, 0.5);
 }
 
+.slider {
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+.slider .icon {
+    font-size: 1.3em;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.slider scale trough {
+    background: $border-color;
+    min-width: 2em;
+    border-radius: 2em;
+}
+
+.slider scale trough highlight {
+    border-radius: 2em;
+}
+
+.audio-slider {
+    color: #ddff77;
+}
+
+.audio-slider .icon {
+    padding-right: .33em;
+}
+
+.audio-slider scale trough highlight {
+    background: #ddff77;
+}
+
+.brightness-slider {
+    color: #ffdd77
+}
+
+.brightness-slider .icon {
+    padding-right: .328em;
+}
+
+
+.brightness-slider scale trough highlight {
+    background: #ffdd77;
+}
+
 .power {
     font-size: 1.4em;
 }
