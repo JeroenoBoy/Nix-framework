@@ -1,12 +1,15 @@
 { config, pkgs, ... }:
 
+let
+  username = "jeroen";
+in
 {
   imports = [
     ./pkgs.nix
     ./modules
   ];
 
-  home.username = "jeroen";
+  home.username = username;
   home.homeDirectory = "/home/jeroen";
   home.stateVersion = "24.05"; 
   
