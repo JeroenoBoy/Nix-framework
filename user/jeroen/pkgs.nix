@@ -9,6 +9,7 @@
     thefuck
     playerctl
     alsa-utils
+    rofi-wayland
 
     discord
 
@@ -28,7 +29,7 @@
     prismlauncher
 
     vlc
-    jellyfin-media-player feishin sonixd
+    jellyfin-media-player feishin
     spotify
   ];
 }

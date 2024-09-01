@@ -5,6 +5,7 @@
     enable = true;
     settings = {
       allow_images = true;
+      layer = "overlay";
     };
 
     style = ''

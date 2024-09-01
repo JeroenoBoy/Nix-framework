@@ -1,0 +1,15 @@
+* {
+    v-background: #222233;
+    v-background-alt: #333344;
+    v-background-highlight: #444455;
+
+    v-selected: #9999ff;
+    v-active: #9999ff;
+    v-urgent: #9999ff;
+
+    v-text: #f8f8f8ff;
+    v-text-highlight: #9999ff;
+    v-border-color: #555555;
+
+    text-color: @v-text;
+}
