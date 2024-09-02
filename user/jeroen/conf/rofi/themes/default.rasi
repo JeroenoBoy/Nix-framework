@@ -1,8 +1,8 @@
 @import "../colors/LaiOS.rasi"
 
 configuration {
-    modi: [combi, drun, window, run, filebrowser];
-    combi-modes: [window, drun, run, filebrowser];
+    modi: [combi, drun, run, filebrowser];
+    combi-modes: [drun, run, filebrowser];
 }
 
 window {
