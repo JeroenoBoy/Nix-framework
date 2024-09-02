@@ -11,7 +11,6 @@
     ./syncthing.nix
     ./waybar.nix
     ./wlogout.nix
-    ./wofi.nix
     ./git.nix
     ./yazi.nix
   ];
