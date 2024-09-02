@@ -9,11 +9,11 @@ in
     ./modules
   ];
 
+  nixpkgs.config.allowUnfree = true;
+
   home.username = username;
   home.homeDirectory = "/home/jeroen";
   home.stateVersion = "24.05"; 
-  
-  nixpkgs.config.allowUnfree = true;
 
   home.file = {
     ".config/hypr/hyprland.conf".source = conf/hyprland.conf;
@@ -25,6 +25,10 @@ in
     };
     ".assets/" = {
       source = ./assets;
+      recursive = true;
+    };
+    ".config/rofi" = {
+      source = ./conf/rofi;
       recursive = true;
     };
   };
