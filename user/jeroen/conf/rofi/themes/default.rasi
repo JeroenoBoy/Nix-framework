@@ -80,23 +80,30 @@ element {
     padding: 36px 8px;
 }
 
+element normal.active,
+element alternate.active {
+    background-color: @v-background-highlight;
+    border: 1px solid;
+    border-color: @v-border-color;
+}
+
 element selected.normal,
-element selected.alternate {
+element selected.alternate,
+element selected.active {
     background-color: rgba(155,155,200,0.3);
     border: 1px solid;
     border-color: @v-border-color;
 }
 
-element-text normal.active, 
-element-text alternate.active {
-    background-color: rgba(255,255,255,0.5);
-}
-
-
 element-text {
     color: @v-text;
     vertical-align: 0.5;
     horizontal-align: 0.5;
+}
+
+element-text normal.active, 
+element-text alternate.active {
+    color: @v-text-highlight;
 }
 
 element-icon {

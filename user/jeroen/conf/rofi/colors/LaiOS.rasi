@@ -1,7 +1,7 @@
 * {
     v-background: #222233;
     v-background-alt: #333344;
-    v-background-highlight: #444455;
+    v-background-highlight: #44445530;
 
     v-selected: #9999ff;
     v-active: #9999ff;
