@@ -7,6 +7,7 @@
       "stegothewise" = "fortune | cowsay -f stegosaurus";
       "aquarium" = "asciiquarium";
       "pipes" = "pipes.sh -t 3";
+      "awp" = "sh $HOME/.sh/add_wallpaper.sh";
     };
 
     variables = {

@@ -54,7 +54,7 @@ entry {
 
 listview {
     cursor: default;
-    columns: 3;
+    columns: 4;
     lines: 4;
     cycle: true;
     dynamic: true;
@@ -68,7 +68,7 @@ listview {
 
     spacing: 12px;
     margin: 0px;
-    padding: 64px 128;
+    padding: 64px 64px;
 }
 
 element normal.normal,
@@ -81,9 +81,20 @@ element {
     border-radius: 24px;
     orientation: vertical;
 
-    spacing: 16px;
     margin: 0;
-    padding: 16px 8px;
+    padding: 8px 0px;
+}
+
+element selected.normal,
+element selected.alternate {
+    background-color: rgba(155,155,200,0.3);
+    border: 1px solid;
+    border-color: @v-border-color;
+}
+
+element-text normal.active, 
+element-text alternate.active {
+    background-color: rgba(255,255,255,0.5);
 }
 
 element-text {
@@ -96,6 +107,11 @@ element-icon {
     background-color: transparent;
     size: 256px;
     border-radius: 8px;
+    padding-bottom: 16px;
+}
+
+element-icon {
+    size: 300px;
 }
 
 mode-switcher {
