@@ -2,6 +2,7 @@
 
 configuration {
     modi: [window];
+    show-icons: true;
 }
 
 window {

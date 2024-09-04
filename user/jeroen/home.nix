@@ -17,7 +17,6 @@ in
 
   home.file = {
     ".config/hypr/hyprland.conf".source = conf/hyprland.conf;
-    ".config/hypr/hyprpaper.conf".source = conf/hyprpaper.conf;
     ".config/electron-flags.conf".source = conf/electron-flags.conf;
     ".sh/" = {
       source = ./shell;

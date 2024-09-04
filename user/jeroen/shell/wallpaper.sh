@@ -1,6 +1,16 @@
 
-current=""
+wallpaperDirectory="$HOME/.assets/wallpapers"
+hyprpaperPath="$HOME/.config/hypr/hyprpaper.conf"
+wallpaperCacheDir="$HOME/.cache/activeWallpaper.txt"
 regexp="^KERNEL\s*\[\d*\.\d*\]\s*(add|remove) *[\w/]* *\(usb_power_delivery\)$"
+
+hyprpaperConfig="
+preload = ${wallpaperCacheDir}/@WALLPAPER@/wallpaper.png
+wallpaper = , ${wallpaperCacheDir}/@WALLPAPER@/assets/wallpaper.png
+"
+
+currentType=""
+currentPaper="Cat Waterfall"
 
 listen() {
     udevadm monitor | while read -r line; do
@@ -20,26 +30,34 @@ switch_wallpaper() {
 }
 
 use_mpv() {
-    if [[ $current == "mpv" ]]; then
+    if [[ $currentType == "mpv" ]]; then
         return 1
     fi
-    current="mpv"
+    currentType="mpv"
     pkill hyprpaper
     pkill mpvpaper
-    mpvpaper -fp -o "no-audio --loop-file=inf --panscan=1.0" '*' ~/.assets/wallpaper.mp4
+    mpvpaper -fp -o "no-audio --loop-file=inf --panscan=1.0" '*' "${wallpaperDirectory}/${currentPaper}/wallpaper.mp4"
     echo "starting mpvpaper"
 }
 
 use_hyprpaper() {
-    if [[ $current == "hypr" ]]; then
+    if [[ $currentType == "hypr" ]]; then
         return 1
     fi
-    current="hypr"
+    currentType="hypr"
     pkill hyprpaper
     pkill mpvpaper
+    echo "${hyprpaperConfig}" | sed -e "s/@WALLPAPER@/${currentPaper}/g" > ${wallpaperCacheDir}
+
     hyprpaper &> /dev/null & disown
     echo "started hyprpaper"
 }
+
+if [ ! -f "$wallpaperCacheDir" ]; then
+    echo "$currentPaper" > "$wallpaperCacheDir"
+fi
+
+currentPaper=`cat "${wallpaperCacheDir}"`
 
 switch_wallpaper
 
