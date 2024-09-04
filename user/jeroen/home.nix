@@ -30,6 +30,10 @@ in
       source = ./conf/rofi;
       recursive = true;
     };
+    ".config/wlogout/icons" = {
+      source = ./assets/icons;
+      recursive = true;
+    };
   };
 
   home.sessionVariables = {

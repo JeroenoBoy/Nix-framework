@@ -19,7 +19,9 @@
       home-manager
       fastfetch
       kitty btop
-      ffmpeg
+      (ffmpeg.override {
+        withSvg = true;
+      })
       brightnessctl
       xdg-desktop-portal
       xdg-desktop-portal-hyprland
