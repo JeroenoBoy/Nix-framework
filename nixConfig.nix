@@ -79,6 +79,11 @@
     prompt.enable = false;
   };
 
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
+
   services.fprintd.enable = true;
   services.printing.enable = true;
   services.blueman.enable = true;
