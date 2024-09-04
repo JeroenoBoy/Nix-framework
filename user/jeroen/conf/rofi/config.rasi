@@ -1,1 +1,7 @@
 @import "./themes/default.rasi"
+
+configuration {
+    modi: [combi, drun, run, filebrowser];
+    combi-modes: [drun, run, filebrowser];
+    display-drun: " ";
+}

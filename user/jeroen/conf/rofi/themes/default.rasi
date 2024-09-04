@@ -1,10 +1,5 @@
 @import "../colors/LaiOS.rasi"
 
-configuration {
-    modi: [combi, drun, run, filebrowser];
-    combi-modes: [drun, run, filebrowser];
-}
-
 window {
     fullscreen: true;
     transparency: "real";
@@ -18,12 +13,11 @@ window {
     padding: 24px;
 
     background-color: black / 70%;
-    border: 0;
-    border-color: transparent;
+    border: 0px solid;
 }
 
 mainbox {
-    children: ["inputbar", "message", "listview", "mode-switcher"];
+    children: ["inputbar", "message", "listview"];
     background-color: transparent;
 
     spacing: 24px;
@@ -65,10 +59,10 @@ listview {
     fixed-columns: true;
     
     background-color: transparent;
+    border: 0;
 
     spacing: 12px;
-    margin: 0px;
-    padding: 64px 128;
+    padding: 64px 128px;
 }
 
 element normal.normal,
@@ -85,6 +79,19 @@ element {
     margin: 0;
     padding: 36px 8px;
 }
+
+element selected.normal,
+element selected.alternate {
+    background-color: rgba(155,155,200,0.3);
+    border: 1px solid;
+    border-color: @v-border-color;
+}
+
+element-text normal.active, 
+element-text alternate.active {
+    background-color: rgba(255,255,255,0.5);
+}
+
 
 element-text {
     color: @v-text;
