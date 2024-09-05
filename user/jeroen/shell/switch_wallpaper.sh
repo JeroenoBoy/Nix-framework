@@ -24,5 +24,10 @@ fi
 
 echo $selected > "$wallpaperCacheDir"
 
-kill `ps -x | grep ".sh/wallpaper.sh" | awk '{print $1}'`
-sh "$HOME/.sh/wallpaper.sh"
+processes=`ps -x`
+wallpaperPID=`echo "$processes" | grep ".sh/wallpaper.sh" | awk "{print $1}"`
+if [[ ! $wallpaperPID == "" ]]; then
+    kill $wallpaperPID
+fi
+
+setsid sh "$HOME/.sh/wallpaper.sh" --listen &> /dev/null

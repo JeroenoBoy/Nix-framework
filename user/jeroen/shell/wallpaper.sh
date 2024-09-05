@@ -5,8 +5,8 @@ wallpaperCacheDir="$HOME/.cache/activeWallpaper.txt"
 regexp="^KERNEL\s*\[\d*\.\d*\]\s*(add|remove) *[\w/]* *\(usb_power_delivery\)$"
 
 hyprpaperConfig="
-preload = ${wallpaperCacheDir}/@WALLPAPER@/wallpaper.png
-wallpaper = , ${wallpaperCacheDir}/@WALLPAPER@/assets/wallpaper.png
+preload = $wallpaperDirectory/@WALLPAPER@/wallpaper.png
+wallpaper = , $wallpaperDirectory/@WALLPAPER@/wallpaper.png
 "
 
 currentType=""
@@ -47,7 +47,7 @@ use_hyprpaper() {
     currentType="hypr"
     pkill hyprpaper
     pkill mpvpaper
-    echo "${hyprpaperConfig}" | sed -e "s/@WALLPAPER@/${currentPaper}/g" > ${wallpaperCacheDir}
+    echo "$hyprpaperConfig" | sed -e "s/@WALLPAPER@/$currentPaper/g" > ${hyprpaperPath}
 
     hyprpaper &> /dev/null & disown
     echo "started hyprpaper"
@@ -58,6 +58,16 @@ if [ ! -f "$wallpaperCacheDir" ]; then
 fi
 
 currentPaper=`cat "${wallpaperCacheDir}"`
+
+if [[ $1 == "-h" ]]; then
+    use_hyprpaper
+    exit 0
+fi
+
+if [[ $1 == "-m" ]]; then
+    use_mpv
+    exit 0
+fi
 
 switch_wallpaper
 
