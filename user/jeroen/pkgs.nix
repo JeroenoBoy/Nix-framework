@@ -28,7 +28,7 @@
     
     prismlauncher
 
-    vlc
+    vlc mpv yt-dlp
     jellyfin-media-player feishin
     spotify
   ];
