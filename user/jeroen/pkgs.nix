@@ -11,7 +11,7 @@
     alsa-utils
     rofi-wayland
 
-    discord
+    discord vesktop
 
     jetbrains-toolbox
     devenv
