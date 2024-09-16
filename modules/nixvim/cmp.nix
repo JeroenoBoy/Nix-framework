@@ -14,6 +14,7 @@
     cmp-nvim-lsp.enable = true;
     cmp-buffer.enable = true;
     cmp-path.enable = true;
+    cmp-dap.enable = true;
     cmp_luasnip.enable = true;
     cmp-treesitter.enable = true;
     cmp = {
@@ -31,6 +32,7 @@
         formatting = { fields = [ "kind" "abbr" "menu" ]; };
         sources = [
           { name = "nvim_lsp"; }
+          { name = "dap"; }
           { name = "treesitter"; }
           { name = "emoji"; }
           {

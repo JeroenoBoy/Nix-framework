@@ -16,6 +16,11 @@
     }
 
     {
+      action = "???<CR>";
+      key = "<leader>f";
+      options.desc = "+Find";
+    }
+    {
       action = "<cmd>Telescope find_files<CR>";
       key = "<leader>ff";
       options.desc = "Find file";
@@ -25,7 +30,13 @@
       key = "<leader>fb";
       options.desc = "File browser";
     }
-        {
+
+    {
+      action = "???<CR>";
+      key = "<leader>b";
+      options.desc = "+Buffers";
+    }
+    {
       action = "<cmd>buffers<CR>";
       key = "<leader>bl";
       options.desc = "Show the contents of the current buffer";
@@ -34,6 +45,13 @@
       action = "<cmd>b#<CR>";
       key = "<leader>br";
       options.desc = "Return to the previously selected buffer";
+    }
+
+
+    {
+      action = "???<CR>";
+      key = "<leader>w";
+      options.desc = "+Window";
     }
     {
       action = "<cmd>vsplit<CR>";
@@ -46,6 +64,11 @@
       options.desc = "Vertical split";
     }
 
+    {
+      action = "???<CR>";
+      key = "<leader>t";
+      options.desc = "+Tabs";
+    }
     {
       action = "<cmd>tabnew<CR>";
       key = "<leader>tn";
@@ -80,6 +103,42 @@
       action = "<cmd>tabm -<CR>";
       key = "<leader>tH";
       options.desc = "Move the current tab to the left";
+    }
+
+    {
+      action = "???<CR>";
+      key = "<leader>d";
+      options.desc = "+Dap";
+    }
+    {
+      action = "<cmd>lua require('dapui').toggle()<CR>";
+      key = "<leader>du";
+      options.desc = "Dap UI";
+    }
+    {
+      action = "<cmd>DapContinue<CR>";
+      key = "<leader>dc";
+      options.desc = "Continue";
+    }
+    {
+      action = "<cmd>DapStepOver<CR>";
+      key = "<leader>dn";
+      options.desc = "Step Over";
+    }
+    {
+      action = "<cmd>DapStepInto<CR>";
+      key = "<leader>di";
+      options.desc = "Step Into";
+    }
+    {
+      action = "<cmd>DapStepOut<CR>";
+      key = "<leader>do";
+      options.desc = "Step Out";
+    }
+    {
+      action = "<cmd>DapToggleBreakpoint<CR>";
+      key = "<leader>db";
+      options.desc = "Toggle Breakpoint";
     }
   ];
 }
