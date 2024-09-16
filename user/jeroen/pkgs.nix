@@ -23,8 +23,11 @@
     gnome.nautilus
     gnome.gnome-tweaks
     gnome.gnome-themes-extra
+    gnome-photos
+    gnome.cheese
     nicotine-plus
     libnotify
+    krita
     
     prismlauncher
 
