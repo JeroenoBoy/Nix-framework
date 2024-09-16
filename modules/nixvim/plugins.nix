@@ -5,16 +5,24 @@
     lualine.enable = true;
     telescope.enable = true;
     telescope.extensions.file-browser.enable = true;
-    which-key.enable = true;
     auto-save.enable = true;
     nix.enable = true;
     yanky.enable = true;
     vim-css-color.enable = true;
     emmet.enable = true;
+    spectre.enable = true;
+    comment.enable = true;
+    todo-comments.enable = true;
+    which-key.enable = true;
 
     treesitter = {
       enable = true;
       folding = false;
+    };
+
+    harpoon = {
+      enable = true;
+      enableTelescope = true;
     };
 
     undotree = {
@@ -32,5 +40,11 @@
       popupBorderStyle = "rounded";
       window.position = "float";
     };
+
+    wilder = {
+      enable = true;
+      modes = [ "/" "?" ":" ];
+    };
+
   };
 }

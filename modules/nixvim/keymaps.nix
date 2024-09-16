@@ -140,5 +140,21 @@
       key = "<leader>db";
       options.desc = "Toggle Breakpoint";
     }
+
+    {
+      action = "???<CR>";
+      key = "<leader>h";
+      options.desc = "+Harpoon";
+    }
+    {
+      action = "<cmd>lua require('harpoon.mark').add_file()<CR>";
+      key = "<leader>ha";
+      options.desc = "Add file to harpoon";
+    }
+    {
+      action = "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>";
+      key = "<leader>hm";
+      options.desc = "Show menu";
+    }
   ];
 }
