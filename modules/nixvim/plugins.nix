@@ -13,6 +13,7 @@
     spectre.enable = true;
     comment.enable = true;
     todo-comments.enable = true;
+    hop.enable = true;
     which-key.enable = true;
 
     treesitter = {

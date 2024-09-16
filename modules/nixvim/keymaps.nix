@@ -16,7 +16,7 @@
     }
 
     {
-      action = "???<CR>";
+      action = "";
       key = "<leader>f";
       options.desc = "+Find";
     }
@@ -30,9 +30,14 @@
       key = "<leader>fb";
       options.desc = "File browser";
     }
+    {
+      action = "<cmd>HopWord<CR>";
+      key = "<leader>fw";
+      options.desc = "Find word";
+    }
 
     {
-      action = "???<CR>";
+      action = "";
       key = "<leader>b";
       options.desc = "+Buffers";
     }
@@ -49,7 +54,7 @@
 
 
     {
-      action = "???<CR>";
+      action = "";
       key = "<leader>w";
       options.desc = "+Window";
     }
@@ -65,7 +70,7 @@
     }
 
     {
-      action = "???<CR>";
+      action = "";
       key = "<leader>t";
       options.desc = "+Tabs";
     }
@@ -106,7 +111,7 @@
     }
 
     {
-      action = "???<CR>";
+      action = "";
       key = "<leader>d";
       options.desc = "+Dap";
     }
@@ -142,7 +147,7 @@
     }
 
     {
-      action = "???<CR>";
+      action = "";
       key = "<leader>h";
       options.desc = "+Harpoon";
     }
@@ -155,6 +160,57 @@
       action = "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>";
       key = "<leader>hm";
       options.desc = "Show menu";
+    }
+
+    {
+      key = "f";
+      action.__raw = ''
+        function()
+          require'hop'.hint_char1({
+            direction = require'hop.hint'.HintDirection.AFTER_CURSOR,
+            current_line_only = true
+          })
+        end
+      '';
+      options.remap = true;
+    }
+    {
+      key = "F";
+      action.__raw = ''
+        function()
+          require'hop'.hint_char1({
+            direction = require'hop.hint'.HintDirection.BEFORE_CURSOR,
+            current_line_only = true
+          })
+        end
+      '';
+      options.remap = true;
+    }
+    {
+      key = "t";
+      action.__raw = ''
+        function()
+          require'hop'.hint_char1({
+            direction = require'hop.hint'.HintDirection.AFTER_CURSOR,
+            current_line_only = true,
+            hint_offset = -1
+          })
+        end
+      '';
+      options.remap = true;
+    }
+    {
+      key = "T";
+      action.__raw = ''
+        function()
+          require'hop'.hint_char1({
+            direction = require'hop.hint'.HintDirection.BEFORE_CURSOR,
+            current_line_only = true,
+            hint_offset = 1
+          })
+        end
+      '';
+      options.remap = true;
     }
   ];
 }
