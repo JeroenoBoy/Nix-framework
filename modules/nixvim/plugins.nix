@@ -13,7 +13,6 @@
     spectre.enable = true;
     comment.enable = true;
     todo-comments.enable = true;
-    hop.enable = true;
     which-key.enable = true;
 
     treesitter = {
@@ -42,10 +41,16 @@
       window.position = "float";
     };
 
+    hop = {
+      enable = true;
+      settings = {
+        case_insensitive = false;
+      };
+    };
+
     wilder = {
       enable = true;
       modes = [ "/" "?" ":" ];
     };
-
   };
 }
