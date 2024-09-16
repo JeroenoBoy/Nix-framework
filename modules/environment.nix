@@ -15,13 +15,12 @@
       SYSTEM_EDITOR = "nvim";
       VISUAL = "nvim";
     };
+
     systemPackages = with pkgs; [
       home-manager
       fastfetch
       kitty btop
-      (ffmpeg.override {
-        withSvg = true;
-      })
+      (ffmpeg.override { withSvg = true; })
       brightnessctl
       xdg-desktop-portal
       xdg-desktop-portal-hyprland
