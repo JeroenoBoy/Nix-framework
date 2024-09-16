@@ -85,11 +85,16 @@
   };
 
   services.fprintd.enable = true;
-  services.printing.enable = true;
   services.blueman.enable = true;
   services.libinput = {
     enable = true;
     touchpad.naturalScrolling = true;
+  };
+  services.printing.enable = true;
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
   };
 
   fonts.packages = with pkgs; [
