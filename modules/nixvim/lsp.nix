@@ -26,7 +26,7 @@ in
 
         # Web
         html = enableHtmlWithTempl;
-        emmet-ls = enableHtmlWithTempl;
+        emmet-ls.enable = true;
         htmx = enableHtmlWithTempl;
         cssls.enable = true;
         svelte.enable = true;
@@ -45,6 +45,7 @@ in
         kotlin-language-server.enable = true;
         java-language-server.enable = true;
         gopls.enable = true;
+        pylsp.enable = true;
       };
       
       keymaps = {

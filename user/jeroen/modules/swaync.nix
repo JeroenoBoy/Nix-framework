@@ -5,8 +5,8 @@
     enable = true;
     settings = {
       control-center-margin-top = 5;
-      control-center-margin-right = 15;
-      control-center-margin-bottom = 15;
+      control-center-margin-right = 5;
+      control-center-margin-bottom = 5;
       timeout = 5;
       timeout-low = 5;
       timeout-critical = 0;

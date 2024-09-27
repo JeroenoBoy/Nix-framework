@@ -34,6 +34,10 @@
         };
       };
 
+      adapters.executables."elixir_ls" = {
+        command = "${pkgs.elixir-ls}/debug_adapter.sh";
+      };
+
       configurations = {
         java = [{
           type = "java";
@@ -41,6 +45,14 @@
           name = "Debug (Attach) - Remote";
           hostName = "127.0.0.1";
           port = 5005;
+        }];
+
+        elixir = [{
+          type = "elixir_ls";
+          name = "Debug";
+          taskArgs = [ "--trace" ];
+          request = "launch";
+          startApps = true;
         }];
       };
 

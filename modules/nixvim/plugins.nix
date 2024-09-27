@@ -12,6 +12,7 @@
     emmet.enable = true;
     spectre.enable = true;
     comment.enable = true;
+    commentary.enable = true;
     todo-comments.enable = true;
     which-key.enable = true;
 
@@ -39,6 +40,7 @@
       closeIfLastWindow = true;
       popupBorderStyle = "rounded";
       window.position = "float";
+
     };
 
     hop = {

@@ -31,6 +31,9 @@
 
       #Very Important
       sl cowsay fortune asciiquarium pipes cava
+
+      # Other things, for the DAP
+      elixir-ls
     ];
   };
 }

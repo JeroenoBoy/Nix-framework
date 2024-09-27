@@ -28,11 +28,13 @@
     nicotine-plus
     libnotify
     krita
+    brave
     
     prismlauncher
 
     vlc mpv yt-dlp
     jellyfin-media-player feishin
     spotify
+    pwvucontrol
   ];
 }
