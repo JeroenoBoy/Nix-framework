@@ -21,6 +21,7 @@
     thunderbird
     obs-studio
     gnome.nautilus
+    gnome.sushi
     gnome.gnome-tweaks
     gnome.gnome-themes-extra
     gnome-photos
