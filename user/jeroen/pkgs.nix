@@ -26,6 +26,7 @@
     gnome.gnome-themes-extra
     gnome-photos
     gnome.cheese
+    libreoffice
     nicotine-plus
     libnotify
     krita
