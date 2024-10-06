@@ -31,6 +31,7 @@
     libnotify
     krita
     brave
+    arduino-ide
     
     prismlauncher
 
