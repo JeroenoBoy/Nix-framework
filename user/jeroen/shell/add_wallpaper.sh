@@ -18,8 +18,8 @@ mv "$path" "$videoPath"
 ffmpeg -i "$videoPath" -vf "select=eq(n\,34)" -vframes 1 "$imgPath"
 
 cd /etc/nixos
-git add $videoPath
-git add $dirPath
+git add "$videoPath"
+git add "$dirPath"
 
 echo "
 Run 'sudo nixos-rebuild switch' to apply the new wallpaper
