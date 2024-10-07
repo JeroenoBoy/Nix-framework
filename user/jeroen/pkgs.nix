@@ -32,6 +32,7 @@
     krita
     brave
     arduino-ide
+    unityhub
     
     prismlauncher
 
