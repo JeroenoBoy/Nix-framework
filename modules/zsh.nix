@@ -8,12 +8,12 @@
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
 
-    shellInit = "fastfetch";
+    shellInit = ''fastfetch'';
 
     ohMyZsh = {
       enable = true;
       theme = "gnzh";
-      plugins = ["git" "history"];
+      plugins = ["git" "history" "zoxide" "thefuck"];
     };
   };
 }

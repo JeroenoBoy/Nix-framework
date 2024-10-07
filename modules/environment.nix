@@ -28,6 +28,7 @@
       networkmanager networkmanagerapplet
       p7zip
       lazygit
+      zoxide
 
       #Very Important
       sl cowsay fortune asciiquarium pipes cava
