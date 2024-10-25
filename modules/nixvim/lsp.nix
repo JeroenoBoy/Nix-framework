@@ -17,6 +17,7 @@ in
         nil-ls.enable = true;
         cmake.enable = true;
         ccls.enable = true;
+        prismals.enable = true;
 
         # Config
         jsonls.enable = true;
