@@ -102,6 +102,19 @@
     jetbrains-mono
   ];
 
+  virtualisation.docker.enable = true;
+  virtualisation.virtualbox = {
+    host.enable = true;
+    host.enableKvm = true;
+    host.addNetworkInterface = false;
+    guest.enable = true;
+  };
+
+  virtualisation.kvmgt.enable = true;
+  virtualisation.libvirtd = {
+    enable = true;
+  };
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
