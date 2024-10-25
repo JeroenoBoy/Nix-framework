@@ -12,11 +12,11 @@
     rofi-wayland
 
     discord vesktop
+    pandoc texliveFull
 
     jetbrains-toolbox
     devenv
     gh
-
     keepassxc
     thunderbird
     obs-studio
@@ -24,6 +24,7 @@
     gnome.sushi
     gnome.gnome-tweaks
     gnome.gnome-themes-extra
+    gnome.gnome-boxes
     gnome-photos
     gnome.cheese
     libreoffice
@@ -33,7 +34,7 @@
     brave
     arduino-ide
     unityhub
-    
+
     prismlauncher
 
     vlc mpv yt-dlp
