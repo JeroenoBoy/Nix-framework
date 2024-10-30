@@ -22,8 +22,13 @@ in
       source = ./shell;
       recursive = true;
     };
-    ".assets/" = {
+    ".assets/icons" = {
       source = ./assets;
+      recursive = true;
+    };
+    ".assets/random.jpg".source = ./assets/random.jpg;
+    "Documents/Wallpapers/LaiOS" = {
+      source = ./assets/wallpapers;
       recursive = true;
     };
     ".config/rofi" = {

@@ -1,16 +1,15 @@
 
-wallpaperDirectory="$HOME/.assets/wallpapers"
 hyprpaperPath="$HOME/.config/hypr/hyprpaper.conf"
 wallpaperCacheDir="$HOME/.cache/activeWallpaper.txt"
 regexp="^KERNEL\s*\[\d*\.\d*\]\s*(add|remove) *[\w/]* *\(usb_power_delivery\)$"
 
 hyprpaperConfig="
-preload = $wallpaperDirectory/@WALLPAPER@/wallpaper.png
-wallpaper = , $wallpaperDirectory/@WALLPAPER@/wallpaper.png
+preload = @WALLPAPER@/wallpaper.png
+wallpaper = , @WALLPAPER@/wallpaper.png
 "
 
 currentType=""
-currentPaper="Cat Waterfall"
+currentPaper="LaiOS/Cat Waterfall"
 
 listen() {
     udevadm monitor | while read -r line; do
@@ -36,7 +35,7 @@ use_mpv() {
     currentType="mpv"
     pkill hyprpaper
     pkill mpvpaper
-    mpvpaper -fp -o "no-audio --loop-file=inf --panscan=1.0" '*' "${wallpaperDirectory}/${currentPaper}/wallpaper.mp4"
+    mpvpaper -fp -o "no-audio --loop-file=inf --panscan=1.0" '*' "${currentPaper}/wallpaper.mp4"
     echo "starting mpvpaper"
 }
 

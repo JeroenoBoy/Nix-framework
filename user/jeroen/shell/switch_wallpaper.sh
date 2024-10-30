@@ -1,15 +1,15 @@
 
-wallpaperDirectory="$HOME/.assets/wallpapers"
 wallpaperCacheDir="$HOME/.cache/activeWallpaper.txt"
 
 pkill rofi
 
 menus() {
     printf "Random\x00icon\x1f$HOME/.assets/random.jpg\n"
-    for w in $HOME/.assets/wallpapers/*/; do
-        local name="${w#"${wallpaperDirectory}/"}"
-        name=${name::-1}
-        printf "$name\x00icon\x1f$wallpaperDirectory/$name/wallpaper.png\n"
+    sh $HOME/.sh/ls_wallpapers.sh | while read w
+    do
+        local name="${w::-1}"
+        local itemName="${name##*/}"
+        printf "$itemName\x00icon\x1f$name/wallpaper.png\n"
     done
 }
 
@@ -19,10 +19,13 @@ if [[ $selected == "" ]]; then
 fi
 
 if [[ $selected == "Random" ]]; then
-    selected=`ls "$wallpaperDirectory" | sort -R | tail -1`
+    selected=`sh "$HOME/.sh/ls_wallpapers.sh" | sort -R | tail -1`
+else
+    selected=`sh $HOME/.sh/ls_wallpapers.sh | grep "$selected/"`
+    echo "$selected"
 fi
 
-echo $selected > "$wallpaperCacheDir"
+echo "$selected" > "$wallpaperCacheDir"
 
 processes=`ps -x`
 wallpaperPID=`echo "$processes" | grep ".sh/wallpaper.sh" | awk "{print $1}"`
