@@ -35,6 +35,9 @@
     arduino-ide
     unityhub
 
+    kdePackages.kdenlive
+    kdePackages.qtwayland
+
     prismlauncher
 
     vlc mpv yt-dlp
