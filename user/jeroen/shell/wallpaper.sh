@@ -47,7 +47,6 @@ use_hyprpaper() {
     pkill hyprpaper
     pkill mpvpaper
     ppr=`echo "$currentPaper" | sed -e "s/\//\\\\\\\\\//g"`
-    echo $ppr
     echo "$hyprpaperConfig" | sed -e "s/@WALLPAPER@/${ppr}/g" > ${hyprpaperPath}
 
     hyprpaper &> /dev/null & disown
