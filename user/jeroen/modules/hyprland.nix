@@ -244,12 +244,6 @@
 
         "$mainMod, S, togglespecialworkspace, magic"
         "$mainMod SHIFT, S, movetoworkspace, special:magic"
-
-        # Virtual Desktops
-
-        "$mainMod ALT, 1, vdesk, 1"
-        "$mainMod ALT, 2, vdesk, 2"
-        "$mainMod ALT, 3, vdesk, 3"
       ];
       bindl = [
         ", XF86MonBrightnessUp, exec, brightnessctl set +5%"
