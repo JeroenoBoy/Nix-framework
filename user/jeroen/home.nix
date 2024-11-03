@@ -16,7 +16,6 @@ in
   home.stateVersion = "24.05"; 
 
   home.file = {
-    ".config/hypr/hyprland.conf".source = conf/hyprland.conf;
     ".config/electron-flags.conf".source = conf/electron-flags.conf;
     ".sh/" = {
       source = ./shell;

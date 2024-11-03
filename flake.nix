@@ -15,7 +15,14 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, nix-flatpak, nixvim, home-manager }: 
+  outputs = {
+    self,
+    nixpkgs,
+    nixos-hardware,
+    nix-flatpak,
+    nixvim,
+    home-manager,
+  }: 
   let
     system = "x86_64-linux";
     version = "24.05";

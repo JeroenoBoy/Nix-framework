@@ -25,8 +25,10 @@
     gnome.gnome-tweaks
     gnome.gnome-themes-extra
     gnome.gnome-boxes
-    gnome-photos
+    gnome.eog
+    gnome.totem
     gnome.cheese
+    gnome.gnome-calculator
     libreoffice
     nicotine-plus
     libnotify
@@ -40,7 +42,7 @@
 
     prismlauncher
 
-    vlc mpv yt-dlp
+    yt-dlp
     jellyfin-media-player feishin
     spotify
     pwvucontrol
