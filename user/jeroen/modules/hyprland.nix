@@ -26,7 +26,7 @@
 
       exec-once = [
         "eww open topbar; nm-applet & blueman-applet"
-        "swaync & hypridle"
+        "swaync"
         "keepassxc"
         "sh ~/.sh/wallpaper.sh --listen"
       ];
@@ -166,8 +166,6 @@
         "$mainMod, mouse:272, movewindow"
         #"$mainMod ALT, mouse:272, resizewindow"
         "$mainMod CONTROL, SUPER_L, exec, eww open --toggle start_menu-closer; eww open --toggle start_menu"
-
-        "$mainMod, $mainMod, hyprexpo:expo, toggle"
 
         "$mainMod, Q, exec, $terminal"
         "$mainMod, E, exec, $fileManager"
