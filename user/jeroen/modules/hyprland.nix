@@ -59,12 +59,10 @@
           shadow_render_power = 3;
           "col.shadow" = "rgba(1a1a1aee)";
 
-          # https://wiki.hyprland.org/Configuring/Variables/#blur
           blur = {
               enabled = true;
               size = 6;
               passes = 2;
-              
               vibrancy = 0.1696;
           };
       };
@@ -268,8 +266,6 @@
 
       windowrule = [
         "float, blueman-manager"
-        "move 68.5% 50, blueman-manager"
-        "size 30% 80%, blueman-manager"
         "float, Calculator"
       ];
 
