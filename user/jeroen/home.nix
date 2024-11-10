@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, version, ... }:
 
 let
   username = "jeroen";
@@ -13,7 +13,7 @@ in
 
   home.username = username;
   home.homeDirectory = "/home/jeroen";
-  home.stateVersion = "24.05"; 
+  home.stateVersion = version; 
 
   home.file = {
     ".config/electron-flags.conf".source = conf/electron-flags.conf;
