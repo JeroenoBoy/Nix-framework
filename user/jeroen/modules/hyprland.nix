@@ -6,6 +6,7 @@
     plugins = with pkgs; [
       hyprlandPlugins.hyprbars
       hyprlandPlugins.hyprexpo
+      hyprlandPlugins.hyprsplit
     ];
 
     settings = {
@@ -18,9 +19,10 @@
       "$browser" = "firefox";
 
       monitor = [
-        "eDP-1,preferred,auto,1.566667"
+        "eDP-1,preferred,0x0,1.566667"
         ",preferred,auto,1"
-        ",1920x1080,auto,1"
+        "DP-2,1920x1080@60,3360x-350,1,transform,3"
+        "DP-3,1920x1080@60,1440x0,1"
         ",3840x2160,auto,2"
       ];
 
@@ -34,6 +36,7 @@
       env = [
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"
+        "HYPRCURSOR_THEME,rose-pine-hyprcursor"
       ];
 
       general = { 

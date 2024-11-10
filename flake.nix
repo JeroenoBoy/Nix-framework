@@ -2,17 +2,18 @@
   description = "LaiOS: My nix config";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOs/nixos-hardware/master";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nixvim = {
-      url = "github:nix-community/nixvim/nixos-24.05";
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
   };
 
   outputs = {
@@ -22,10 +23,12 @@
     nix-flatpak,
     nixvim,
     home-manager,
-  }: 
+    ...
+  }@inputs: 
   let
     system = "x86_64-linux";
-    version = "24.05";
+    version = "unstable";
+    home-manager-version = "24.11";
   in {
     nixosConfigurations = {
       LaiOS = nixpkgs.lib.nixosSystem {
@@ -41,7 +44,8 @@
             home-manager.users.jeroen = import ./user/jeroen;
             home-manager.extraSpecialArgs = {
               inherit system;
-              inherit version;
+              inherit inputs;
+              version = home-manager-version;
             };
           }
           ./nixConfig.nix

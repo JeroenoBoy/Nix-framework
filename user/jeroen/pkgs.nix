@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, inputs, ...}: {
   home.packages = with pkgs; [
     mpvpaper hyprpaper # Switch between the 2
     font-manager
@@ -20,15 +20,18 @@
     keepassxc
     thunderbird
     obs-studio
-    gnome.nautilus
-    gnome.sushi
-    gnome.gnome-tweaks
-    gnome.gnome-themes-extra
-    gnome.gnome-boxes
-    gnome.eog
-    gnome.totem
-    gnome.cheese
-    gnome.gnome-calculator
+
+    # Gnome stuff
+    nautilus
+    sushi
+    gnome-tweaks
+    gnome-themes-extra
+    gnome-boxes
+    eog
+    totem
+    cheese
+    gnome-calculator
+
     libreoffice
     nicotine-plus
     libnotify
@@ -46,5 +49,7 @@
     jellyfin-media-player feishin
     spotify
     pwvucontrol
+
+    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
 }
