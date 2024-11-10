@@ -5,6 +5,7 @@
 (deflisten player_data :initial "{\"found\":false}" "sh scripts/player.sh activePlayer --listen")
 (deflisten brightness :initial 0 "sh scripts/brightness.sh --listen")
 (defpoll volume :interval "10s" :initial 0 "sh scripts/volume.sh")
+(defpoll hypridleRunning :interval "10s" :initial "true" "sh scripts/idler.sh status")
 
 ;; Windows
 
@@ -22,7 +23,7 @@
       (box :orientation "vertical" :spacing 8
         (weather)
         (player)
-        (box :class "menu-module")
+        (buttons)
         (power)))))
 
 
@@ -48,6 +49,16 @@
     (box :orientation "vertical" :space-evenly false :valign "center"
       (box :class "weather-temp" {weather.temprature})
       (box :class "weather-country" {weather.country}))))
+
+(defwidget buttons []
+  (box :class "menu-module power"
+       :orientation "h"
+       :space-evenly true
+       :valign "fill"
+       :halign "fill"
+    (box :halign "center" :valign "center" :width 48 :height 48
+      (button :onclick "sh scripts/idler.sh toggle" :class ""
+        (label :justify "center" :style "padding-right: 0.18em" :text {hypridleRunning ? "󰥔" : ""})))))
 
 (defwidget power []
   (box :class "menu-module power"
