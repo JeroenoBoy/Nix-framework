@@ -36,6 +36,7 @@
     brave
     arduino-ide
     unityhub
+    wireshark
 
     kdePackages.kdenlive
     kdePackages.qtwayland
