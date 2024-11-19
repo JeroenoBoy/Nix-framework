@@ -63,8 +63,7 @@
   users.users.jeroen = {
     isNormalUser = true;
     description = "Jeroen";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [ ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
 
   nixpkgs.config.allowUnfree = true;
