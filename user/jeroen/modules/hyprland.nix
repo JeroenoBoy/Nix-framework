@@ -18,7 +18,7 @@
       "$browser" = "firefox";
 
       monitor = [
-        "eDP-1,preferred,auto,1.566667"
+        "eDP-1,preferred,auto,1.875"
         ",preferred,auto,1"
         ",1920x1080,auto,1"
         ",3840x2160,auto,2"

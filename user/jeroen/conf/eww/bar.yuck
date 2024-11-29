@@ -16,7 +16,7 @@
 (defwindow topbar
   :class "topbar"
   :monitor 0
-  :geometry (geometry :width "130%" :x "0%" :y "3px" :anchor "t c")
+  :geometry (geometry :width "109%" :x "0%" :y "5px" :anchor "t c")
   :stacking "fg"
   :exclusive true
 
