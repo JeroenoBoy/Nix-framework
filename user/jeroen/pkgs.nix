@@ -20,15 +20,6 @@
     keepassxc
     thunderbird
     obs-studio
-    gnome.nautilus
-    gnome.sushi
-    gnome.gnome-tweaks
-    gnome.gnome-themes-extra
-    gnome.gnome-boxes
-    gnome.eog
-    gnome.totem
-    gnome.cheese
-    gnome.gnome-calculator
     libreoffice
     nicotine-plus
     libnotify
@@ -47,5 +38,16 @@
     jellyfin-media-player feishin
     spotify
     pwvucontrol
+
+    gnome.nautilus
+    gnome.sushi
+    gnome.gnome-tweaks
+    gnome.gnome-themes-extra
+    gnome.gnome-boxes
+    gnome.eog
+    gnome.totem
+    gnome.cheese
+    gnome.gnome-calculator
+    gnomeExtensions.blur-my-shell
   ];
 }
