@@ -11,6 +11,13 @@
   boot.loader.efi.canTouchEfiVariables = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  # Auto GC
+  nix.gc = {
+    automatic = true;
+    dates = "daily";
+    options = "--delete-older-than=14d";
+  };
+
   # Enable networking
   networking = {
     hostName = "LaiOS";
@@ -104,7 +111,6 @@
   virtualisation.docker.enable = true;
   virtualisation.virtualbox = {
     host.enable = true;
-    host.enableKvm = true;
     host.addNetworkInterface = false;
     guest.enable = true;
   };
