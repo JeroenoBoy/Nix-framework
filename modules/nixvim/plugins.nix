@@ -15,6 +15,7 @@
     commentary.enable = true;
     todo-comments.enable = true;
     which-key.enable = true;
+    web-devicons.enable = true;
 
     treesitter = {
       enable = true;

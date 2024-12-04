@@ -1,4 +1,4 @@
-{...}:
+{pkgs, ...}:
 
 let
   enableHtmlWithTempl = {
@@ -14,10 +14,13 @@ in
       servers = {
 
         # Build tools
-        nil-ls.enable = true;
+        nil_ls.enable = true;
         cmake.enable = true;
         ccls.enable = true;
-        prismals.enable = true;
+        prismals = {
+          enable = true;
+          package = null;
+        };
 
         # Config
         jsonls.enable = true;
@@ -27,11 +30,11 @@ in
 
         # Web
         html = enableHtmlWithTempl;
-        emmet-ls = enableHtmlWithTempl;
+        emmet_ls = enableHtmlWithTempl;
         htmx = enableHtmlWithTempl;
         cssls.enable = true;
         svelte.enable = true;
-        tsserver.enable = true;
+        ts_ls.enable = true;
         templ = {
           enable = true;
           autostart = true;
@@ -43,8 +46,8 @@ in
         };
 
         # Backend
-        kotlin-language-server.enable = true;
-        java-language-server.enable = true;
+        kotlin_language_server.enable = true;
+        java_language_server.enable = true;
         gopls.enable = true;
         pylsp.enable = true;
       };

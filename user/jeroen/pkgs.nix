@@ -39,15 +39,15 @@
     spotify
     pwvucontrol
 
-    gnome.nautilus
-    gnome.sushi
-    gnome.gnome-tweaks
-    gnome.gnome-themes-extra
-    gnome.gnome-boxes
-    gnome.eog
-    gnome.totem
-    gnome.cheese
-    gnome.gnome-calculator
+    nautilus
+    sushi
+    gnome-tweaks
+    gnome-themes-extra
+    gnome-boxes
+    eog
+    totem
+    cheese
+    gnome-calculator
     gnomeExtensions.blur-my-shell
   ];
 }
