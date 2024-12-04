@@ -3,7 +3,7 @@
 let
   enableHtmlWithTempl = {
     enable = true;
-    filetypes = ["html" "templ"];
+    filetypes = ["html" "templ" "handlebars"];
   };
 in
 {
@@ -27,7 +27,7 @@ in
 
         # Web
         html = enableHtmlWithTempl;
-        emmet-ls.enable = true;
+        emmet-ls = enableHtmlWithTempl;
         htmx = enableHtmlWithTempl;
         cssls.enable = true;
         svelte.enable = true;

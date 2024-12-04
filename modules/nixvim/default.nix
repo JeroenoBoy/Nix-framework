@@ -33,6 +33,7 @@
 
       filetype.extension = {
         "templ" = "templ";
+        "handlebars" = "hbs";
       };
 
       extraConfigLua = ''
