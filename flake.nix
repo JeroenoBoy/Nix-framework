@@ -22,7 +22,8 @@
     nix-flatpak,
     nixvim,
     home-manager,
-  }: 
+    ...
+  }@inputs: 
   let
     system = "x86_64-linux";
     version = "24.11";
@@ -30,7 +31,7 @@
     nixosConfigurations = {
       LaiOS = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = {inherit system version nixvim;};
+        specialArgs = {inherit system version nixvim inputs;};
         modules = [
           nixos-hardware.nixosModules.framework-13-7040-amd
           nix-flatpak.nixosModules.nix-flatpak
@@ -41,6 +42,7 @@
             home-manager.users.jeroen = import ./user/jeroen;
             home-manager.extraSpecialArgs = {
               inherit system;
+              inherit inputs;
               inherit version;
             };
           }
