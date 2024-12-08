@@ -20,6 +20,14 @@
     treesitter = {
       enable = true;
       folding = false;
+      settings = {
+        highlight = {
+          additional_vim_regex_highlighting = true;
+          enable = true;
+        };
+
+        indent.enable = true;
+      };
     };
 
     harpoon = {
