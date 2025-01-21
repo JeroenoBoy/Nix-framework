@@ -44,12 +44,12 @@
 
     neo-tree = {
       enable = true;
+      enableDiagnostics = false;
       enableModifiedMarkers = true;
       enableGitStatus = true;
       closeIfLastWindow = true;
       popupBorderStyle = "rounded";
       window.position = "float";
-
     };
 
     hop = {

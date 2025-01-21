@@ -7,6 +7,7 @@
     ./keymaps.nix
     ./lsp.nix
     ./plugins.nix
+    ./snacks.nix
   ];
 
   programs.nixvim = {

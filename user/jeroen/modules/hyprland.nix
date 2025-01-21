@@ -243,6 +243,9 @@
 
         "$mainMod, S, togglespecialworkspace, magic"
         "$mainMod SHIFT, S, movetoworkspace, special:magic"
+
+        # Disable MMB
+        ",mouse:274,exec,"
       ];
       bindl = [
         ", XF86MonBrightnessUp, exec, brightnessctl set +5%"
