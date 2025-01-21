@@ -74,6 +74,9 @@
   };
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-31.7.7"
+  ];
 
   programs.firefox.enable = true;
   programs.hyprland.enable = true;
