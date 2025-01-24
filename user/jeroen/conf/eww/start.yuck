@@ -5,7 +5,8 @@
 (deflisten player_data :initial "{\"found\":false}" "sh scripts/player.sh activePlayer --listen")
 (deflisten brightness :initial 0 "sh scripts/brightness.sh --listen")
 (defpoll volume :interval "10s" :initial 0 "sh scripts/volume.sh")
-(defpoll hypridleRunning :interval "10s" :initial "true" "sh scripts/idler.sh status")
+(defpoll hypridleRunning :interval "1s" :initial "true" "sh scripts/idler.sh status")
+(defpoll animatedWallpaperEnabled :interval "1s" :initial "true" "sh scripts/wallpaper.sh status")
 
 ;; Windows
 
@@ -58,7 +59,10 @@
        :halign "fill"
     (box :halign "center" :valign "center" :width 48 :height 48
       (button :onclick "sh scripts/idler.sh toggle" :class ""
-        (label :justify "center" :style "padding-right: 0.18em" :text {hypridleRunning ? "󰥔" : ""})))))
+        (label :justify "center" :style "padding-right: 0.18em" :text {hypridleRunning ? "󰥔" : ""})))
+    (box :halign "center" :valign "center" :width 48 :height 48
+      (button :onclick "sh scripts/wallpaper.sh toggle" :class ""
+        (label :justify "center" :style "padding-right: 0.18em" :text {animatedWallpaperEnabled ? "󰋩" : "󰥶"})))))
 
 (defwidget power []
   (box :class "menu-module power"

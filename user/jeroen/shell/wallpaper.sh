@@ -1,6 +1,7 @@
 
 hyprpaperPath="$HOME/.config/hypr/hyprpaper.conf"
 wallpaperCacheDir="$HOME/.cache/activeWallpaper.txt"
+animateWallpaperDir="$HOME/.cache/animateWallpaper.txt"
 regexp="^KERNEL\s*\[\d*\.\d*\]\s*(add|remove) *[\w/]* *\(usb_power_delivery\)$"
 
 hyprpaperConfig="
@@ -21,7 +22,8 @@ listen() {
 
 switch_wallpaper() {
     isPluggedIn=`cat /sys/class/power_supply/ACAD/online`
-    if [[ $isPluggedIn == 1 ]]; then
+    isAnimatedEnabled=`cat "$animateWallpaperDir"`
+    if [[ $isPluggedIn == 1 && $isAnimatedEnabled == "y" ]]; then
         use_mpv
     else
         use_hyprpaper
@@ -55,6 +57,10 @@ use_hyprpaper() {
 
 if [ ! -f "$wallpaperCacheDir" ]; then
     echo "$currentPaper" > "$wallpaperCacheDir"
+fi
+
+if [ ! -f "$wallpaperCacheDir" ]; then
+    echo "y" > "$animateWallpaperDir"
 fi
 
 currentPaper=`cat "${wallpaperCacheDir}"`
