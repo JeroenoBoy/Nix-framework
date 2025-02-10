@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{pkgs, inputs, system, ...}:
 
 {
   environment = {
@@ -29,6 +29,8 @@
       p7zip
       lazygit
       zoxide
+
+      inputs.zen-browser.packages."${system}".beta
 
       #Very Important
       sl cowsay fortune asciiquarium pipes cava
