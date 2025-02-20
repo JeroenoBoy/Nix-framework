@@ -27,7 +27,8 @@
     brave
     arduino-ide
     unityhub
-    wireshark
+    godot_4-mono
+    aseprite
 
     kdePackages.kdenlive
     kdePackages.qtwayland
