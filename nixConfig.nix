@@ -76,6 +76,8 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [
     "electron-31.7.7"
+    "dotnet-sdk-6.0.428"
+    "dotnet-runtime-6.0.36"
   ];
 
   programs.firefox.enable = true;
