@@ -7,5 +7,6 @@
     ./flatpak.nix
     ./zsh.nix
     ./steam.nix
+    ./rider.nix
   ];
 }
