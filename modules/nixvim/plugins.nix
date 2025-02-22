@@ -16,6 +16,7 @@
     todo-comments.enable = true;
     which-key.enable = true;
     web-devicons.enable = true;
+    godot.enable = true;
 
     treesitter = {
       enable = true;

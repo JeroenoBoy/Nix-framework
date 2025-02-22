@@ -50,6 +50,13 @@ in
         java_language_server.enable = true;
         gopls.enable = true;
         pylsp.enable = true;
+
+        # Gamedev
+        gdscript = {
+          enable = true;
+          package = pkgs.gdtoolkit_4;
+        };
+        csharp_ls.enable = true;
       };
       
       keymaps = {
