@@ -15,7 +15,7 @@
     pandoc texliveFull
 
     jetbrains-toolbox
-    devenv
+    # devenv
     gh
     keepassxc
     thunderbird
@@ -27,8 +27,8 @@
     brave
     arduino-ide
     unityhub
-    godot_4-mono
     aseprite
+    godot-mono
 
     kdePackages.kdenlive
     kdePackages.qtwayland

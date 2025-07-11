@@ -8,6 +8,8 @@
       "aquarium" = "asciiquarium";
       "pipes" = "pipes.sh -t 3";
       "awp" = "sh $HOME/.sh/add_wallpaper.sh";
+      "n" = "nvim";
+      "lg" = "lazygit";
     };
 
     variables = {

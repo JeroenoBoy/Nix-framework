@@ -73,9 +73,14 @@
           "col.border_active" = "rgba(00ff99ee) rgba(33ccffee) 45deg";
           "col.border_inactive" = "rgba(595959aa)";
           groupbar = {
-              font_size = 10;
+              enabled = true;
+              font_size = 12;
               "col.active" = "rgba(00ff99aa)";
               "col.inactive" = "rgba(00ee7733)";
+              height = 14;
+              indicator_height = 16;
+              indicator_gap = -14;
+              rounding = 16;
           };
       };
 
@@ -151,7 +156,7 @@
 
           touchpad = {
               natural_scroll = true;
-              scroll_factor = 0.5;
+              scroll_factor = 0.25;
           };
       };
 
@@ -268,8 +273,8 @@
       ];
 
       windowrule = [
-        "float, blueman-manager"
-        "float, Calculator"
+        "float, class:blueman-manager"
+        "float, class:Calculator"
       ];
 
       windowrulev2 = [

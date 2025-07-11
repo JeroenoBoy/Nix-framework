@@ -55,10 +55,9 @@
   };
 
   services.gnome = {
-    core-utilities.enable = false;
+    core-apps.enable = false;
   };
 
-  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -109,9 +108,8 @@
   };
 
   fonts.packages = with pkgs; [
-    nerdfonts
     jetbrains-mono
-  ];
+  ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
   virtualisation.docker.enable = true;
   virtualisation.virtualbox = {

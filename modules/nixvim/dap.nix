@@ -2,14 +2,12 @@
 
 {
   programs.nixvim.plugins = {
+    dap-virtual-text.enable = true;
+    dap-ui.enable = true;
+    dap-python.enable = true;
+    dap-go.enable = true;
     dap = {
       enable = true;
-      extensions = {
-        dap-go.enable = true;
-        dap-ui.enable = true;
-        dap-python.enable = true;
-        dap-virtual-text.enable = true;
-      };
 
       signs = {
         dapBreakpoint = {
