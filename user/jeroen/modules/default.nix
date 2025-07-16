@@ -2,7 +2,8 @@
 
 {
   imports = [
-    ./eww.nix
+    ./eww
+    ./quickshell
     ./gtk.nix
     ./hypridle.nix
     ./hyprland.nix

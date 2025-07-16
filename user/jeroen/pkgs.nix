@@ -1,4 +1,4 @@
-{pkgs, pkgs-unstable, inputs, ...}: {
+{pkgs, inputs, ...}: {
   home.packages = with pkgs; [
     mpvpaper hyprpaper # Switch between the 2
     font-manager
@@ -53,6 +53,5 @@
     squirreldisk
 
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
-    pkgs-unstable.quickshell
   ];
 }

@@ -11,11 +11,6 @@ in
 
   nixpkgs.config.allowUnfree = true;
 
-  _module.args.pkgs-unstable = import inputs.nixpkgs-unstable {
-    inherit (pkgs.stdenv.hostPlatform) system;
-    inherit (config.nixpkgs) config;
-  };
-
   home.username = username;
   home.homeDirectory = "/home/jeroen";
   home.stateVersion = version; 
@@ -41,10 +36,6 @@ in
     };
     ".config/wlogout/icons" = {
       source = ./assets/icons;
-      recursive = true;
-    };
-    ".config/quickshell" = {
-      source = ./conf/quickshell;
       recursive = true;
     };
   };

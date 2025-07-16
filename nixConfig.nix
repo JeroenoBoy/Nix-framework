@@ -43,11 +43,6 @@
     LC_TIME = "nl_NL.UTF-8";
   };
 
-  _module.args.pkgs-unstable = import inputs.nixpkgs-unstable {
-    inherit (pkgs.stdenv.hostPlatform) system;
-    inherit (config.nixpkgs) config;
-  };
-
   services.xserver = {
     enable = true;
     xkb = {
@@ -58,6 +53,8 @@
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
   };
+
+  qt.enable = true;
 
   services.gnome = {
     core-apps.enable = false;
