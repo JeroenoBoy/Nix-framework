@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOs/nixos-hardware/master";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nixvim = {
@@ -27,6 +28,7 @@
     nix-flatpak,
     nixvim,
     home-manager,
+    nixpkgs-unstable,
     ...
   }@inputs: 
   let

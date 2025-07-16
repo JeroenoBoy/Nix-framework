@@ -1,4 +1,4 @@
-{ pkgs, version, ... }:
+{ pkgs, version, config, inputs, ... }:
 
 {
   imports = [ 
@@ -41,6 +41,11 @@
     LC_PAPER = "nl_NL.UTF-8";
     LC_TELEPHONE = "nl_NL.UTF-8";
     LC_TIME = "nl_NL.UTF-8";
+  };
+
+  _module.args.pkgs-unstable = import inputs.nixpkgs-unstable {
+    inherit (pkgs.stdenv.hostPlatform) system;
+    inherit (config.nixpkgs) config;
   };
 
   services.xserver = {

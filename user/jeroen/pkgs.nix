@@ -1,4 +1,4 @@
-{pkgs, inputs, ...}: {
+{pkgs, pkgs-unstable, inputs, ...}: {
   home.packages = with pkgs; [
     mpvpaper hyprpaper # Switch between the 2
     font-manager
@@ -50,7 +50,9 @@
     cheese
     gnome-calculator
     gnomeExtensions.blur-my-shell
+    squirreldisk
 
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+    pkgs-unstable.quickshell
   ];
 }
