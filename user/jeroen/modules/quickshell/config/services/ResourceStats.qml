@@ -98,11 +98,10 @@ Singleton {
 
     Process {
         id: avgTemp
-        command: ["sh", "\"$HOME/.config/quickshell/scripts/cpu_temp.sh\""]
+        command: ["sh", Quickshell.configPath("scripts/cpu_temp.sh")]
         running: true
         stdout: StdioCollector {
             onStreamFinished: {
-                cpuTempOut = "-" + this.text;
                 cpuTemp = parseFloat(this.text);
             }
         }

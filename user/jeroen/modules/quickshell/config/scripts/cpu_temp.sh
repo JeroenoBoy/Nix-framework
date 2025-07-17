@@ -1,3 +1,4 @@
+#!/bin/sh
 
 base="/sys/class/thermal"
 values=()

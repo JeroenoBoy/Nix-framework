@@ -9,7 +9,7 @@ BarItem {
     id: root
 
     Txt {
-        text: " " + Math.ceil(ResourceStats.cpuTemp * 10000) / 100 + "%"
+        text: " " + Math.round(ResourceStats.cpuTemp) + "°C"
     }
 
     Txt {
