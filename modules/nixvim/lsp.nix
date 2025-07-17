@@ -27,6 +27,10 @@ in
         yamlls.enable = true;
         ltex.enable = true;
         sqls.enable = true;
+        qmlls = {
+          enable = true;
+          cmd = [ "qmlls" "-E" ];
+        };
 
         # Web
         html = enableHtmlWithTempl;

@@ -1,6 +1,6 @@
 import QtQuick
 
 Text {
-    required property string time
-    text: time
+    required property var time
+    text: Qt.formatDateTime(clock.date, "ddd dd MMM hh:mm")
 }

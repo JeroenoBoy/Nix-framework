@@ -1,21 +1,27 @@
 import Quickshell
 import Quickshell.Io
 import QtQuick
-import QtQuick.Layout
+import QtQuick.Layouts
 
-import qs.process
-import qs.widgets
+import "root:/widgets"
 
 Scope {
     id: root
     property string time
 
+    SystemClock {
+        id: clock
+        precision: SystemClock.Minutes
+    }
+
     Variants {
-        model: screens
+        model: Quickshell.screens
 
         PanelWindow {
             property var modelData
             screen: modelData
+
+            color: "transparent"
 
             anchors {
                 top: true
@@ -25,11 +31,19 @@ Scope {
 
             implicitHeight: 30
 
-            RowLayout {
-                anchors.centerIn: parent
+            margins {
+                left: 4
+                right: 4
+                top: 4
+            }
 
-                Text {
-                    text: DateTime.date
+            BarGroup {
+                anchors.right: parent.right
+                height: parent.height
+
+                Tray {}
+                Clock {
+                    time: clock.date
                 }
             }
         }
