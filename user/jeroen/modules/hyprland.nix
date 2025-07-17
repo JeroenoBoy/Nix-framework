@@ -15,7 +15,6 @@
       "$menu" = "pkill rofi; rofi -show drun -show-icons -terminal kitty";
       "$menu-window" = ''pkill rofi; rofi -show window -show-icons -config "~/.config/rofi/themes/windows.rasi"'';
       "$emoji" = "wofi-emoji --show drun";
-      "$browser" = "firefox";
 
       monitor = [
         "eDP-1,2880x1920@60,auto,1.875"
@@ -180,7 +179,6 @@
         "$mainMod, W, exec, $menu-window"
         "$mainMod SHIFT, W, exec, sh ~/.sh/switch_wallpaper.sh"
         "$mainMod, O, exec, $emoji"
-        "$mainMod, B, exec, $browser"
         "$mainMod, P, exec, hyprlock"
         "$mainMod, X, exec, wlogout -b 5 -T 380 -B 380 -R 64 -L 64"
         "$mainMod SHIFT, R, exec, sh ~/.sh/hyprreload.sh"
