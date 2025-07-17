@@ -18,7 +18,7 @@ Singleton {
     Scope {
         id: bg
         readonly property color color: "#222233"
-        readonly property color borderColor: "#555566"
+        readonly property color borderColor: "#3f3f4f"
         readonly property real borderWidth: 1 * root.scale
         readonly property real margin: 4 * root.scale
         readonly property real padding: 8 * root.scale
@@ -27,7 +27,7 @@ Singleton {
         id: txt
         readonly property font font: ({
                 family: "JetbrainsMono Nerd Font",
-                pixelSize: 13 * root.scale
+                pixelSize: 14 * root.scale
             })
 
         readonly property color color: "#ccccff"
@@ -39,7 +39,7 @@ Singleton {
         readonly property real rounding: height / 2
         readonly property real spacing: 16 * root.scale
         readonly property real paddingY: 8 * root.scale
-        readonly property real paddingX: 12 * root.scale
+        readonly property real paddingX: 16 * root.scale
     }
 
     Scope {
