@@ -1,34 +1,41 @@
 import Quickshell
 import QtQuick
 import QtQuick.Layouts
+import "root:/theme"
 
 RowLayout {
     id: root
+    height: parent.height
 
-    property real margin: 6
+    property real paddingX: Theme.bar.paddingX
+    property real paddingY: Theme.bar.paddingY
     default property alias items: rowLayout.children
 
     Rectangle {
-        anchors {
-            fill: parent
-        }
-        color: "red"
+        anchors.fill: parent
+
+        color: Theme.bg.color
         radius: 16
+
         border {
-            color: "blue"
-            width: 2
+            color: Theme.bg.borderColor
+            width: Theme.bg.borderWidth
         }
     }
 
     Item {
         id: rowParent
         height: parent.height
-        implicitWidth: rowLayout.implicitWidth + root.margin * 2 + 2
+        implicitWidth: rowLayout.implicitWidth + root.paddingX * 2 + 2
+        implicitHeight: rowLayout.implicitHeight + root.paddingY * 2
 
         RowLayout {
             id: rowLayout
             height: parent.height
-            x: root.margin
+            anchors.centerIn: parent
+            x: root.paddingX
+            y: root.paddingY
+            spacing: Theme.bar.spacing
         }
     }
 }

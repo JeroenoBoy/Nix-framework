@@ -1,6 +1,7 @@
 import QtQuick
+import "root:/theme"
 
-Text {
+Txt {
     required property var time
     text: Qt.formatDateTime(clock.date, "ddd dd MMM hh:mm")
 }

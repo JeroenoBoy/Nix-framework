@@ -4,6 +4,8 @@ import QtQuick
 import QtQuick.Layouts
 
 import "root:/widgets"
+import "root:/widgets/system"
+import "root:/theme"
 
 Scope {
     id: root
@@ -29,7 +31,7 @@ Scope {
                 right: true
             }
 
-            implicitHeight: 30
+            height: Theme.bar.height
 
             margins {
                 left: 4
@@ -38,8 +40,11 @@ Scope {
             }
 
             BarGroup {
+                Battery {}
+            }
+
+            BarGroup {
                 anchors.right: parent.right
-                height: parent.height
 
                 Tray {}
                 Clock {
