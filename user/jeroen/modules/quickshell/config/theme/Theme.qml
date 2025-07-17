@@ -36,9 +36,10 @@ Singleton {
     Scope {
         id: bar
         readonly property real height: this.paddingY + txt.font.pixelSize * 1.8
+        readonly property real rounding: height / 2
         readonly property real spacing: 16 * root.scale
         readonly property real paddingY: 8 * root.scale
-        readonly property real paddingX: 8 * root.scale
+        readonly property real paddingX: 12 * root.scale
     }
 
     Scope {

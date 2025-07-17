@@ -31,7 +31,7 @@ Scope {
                 right: true
             }
 
-            height: Theme.bar.height
+            implicitHeight: Theme.bar.height
 
             margins {
                 left: 4
@@ -41,6 +41,10 @@ Scope {
 
             BarGroup {
                 Battery {}
+                Ram {}
+                Cpu {}
+                Storage {}
+                Temp {}
             }
 
             BarGroup {

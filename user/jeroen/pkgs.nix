@@ -45,6 +45,7 @@
     gnome-tweaks
     gnome-themes-extra
     gnome-boxes
+    seahorse
     eog
     totem
     cheese

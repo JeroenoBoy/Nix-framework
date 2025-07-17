@@ -1,16 +1,14 @@
 import Quickshell
 import Quickshell.Services.UPower
 import QtQuick
-import "root:/theme"
-import "root:/components"
 
-Item {
+import "root:/theme"
+import "root:/widgets"
+
+BarItem {
     id: root
 
-    implicitWidth: txt.implicitWidth
-    height: parent.height
-
-    readonly property var icons_charging: ["󰢟", "󰢜", "󰂆","󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
+    readonly property var icons_charging: ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
     readonly property var icons_discharging: ["󰂎", "󱊡", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
 
     property UPowerDevice device: UPower.displayDevice//UPower.devices.values.find(it => it.isLaptopBattery == true)
@@ -26,8 +24,8 @@ Item {
     Txt {
         id: txt
         text: {
-            let icon = (showChargeIcon ? icons_charging : icons_discharging)[Math.ceil(percentage*10)]
-            return icon + " " + Math.round(percentage * 100) + "%"
+            let icon = (showChargeIcon ? icons_charging : icons_discharging)[Math.ceil(percentage * 10)];
+            return icon + " " + Math.round(percentage * 100) + "%";
         }
     }
 }
