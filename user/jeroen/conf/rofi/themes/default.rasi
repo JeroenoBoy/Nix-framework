@@ -26,7 +26,7 @@ mainbox {
 inputbar {
     children: ["prompt", "entry"];
 
-    border-radius: 8px;
+    border-radius: 100%;
     background-color: @v-background;
 
     border: 1px;
@@ -34,7 +34,7 @@ inputbar {
 
     spacing: 12px;
     margin: 0% 28%;
-    padding: 14px;
+    padding: 14px 24px;
 }
 
 prompt {

@@ -11,6 +11,7 @@ mainbox {
 
 listview {
     columns: 4;
+    lines: 2;
     spacing: 8px;
     margin: 0px;
     padding: 64px 64px;
@@ -23,6 +24,6 @@ element {
 }
 
 element-icon {
-    size: 256px;
+    size: 256;
     border-radius: 100%;
 }
