@@ -28,7 +28,7 @@ Rectangle {
         animation: NumberAnimation {
             target: root
             property: "implicitWidth"
-            duration: 350
+            duration: 500
             easing.type: Easing.OutCubic
         }
     }
@@ -46,7 +46,7 @@ Rectangle {
         animation: ColorAnimation {
             target: root
             property: "color"
-            duration: 350
+            duration: 500
             easing.type: Easing.OutSine
         }
     }
