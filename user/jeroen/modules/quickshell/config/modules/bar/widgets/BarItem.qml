@@ -9,11 +9,12 @@ Item {
     height: parent.height
 
     property real spacing: 0
+
     default property alias items: row.children
 
     RowLayout {
         id: row
         spacing: root.spacing
-        anchors.fill: parent
+        height: parent.height
     }
 }
