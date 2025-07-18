@@ -6,7 +6,7 @@ import "root:/theme"
 Item {
     id: root
 
-    width: rowParent.implicitWidth
+    implicitWidth: rowParent.implicitWidth
     height: parent.height
 
     property real paddingX: Theme.bar.paddingX
@@ -27,12 +27,13 @@ Item {
     Item {
         id: rowParent
         implicitWidth: rowLayout.implicitWidth + root.paddingX * 2
-        implicitHeight: rowLayout.implicitHeight + root.paddingY * 2
+        height: parent.height - root.paddingY * 2
 
         RowLayout {
             id: rowLayout
             height: parent.height
-            anchors.centerIn: parent
+            x: root.paddingX
+            y: root.paddingY
             spacing: Theme.bar.spacing
         }
     }
