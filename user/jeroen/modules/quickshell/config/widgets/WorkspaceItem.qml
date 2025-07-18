@@ -1,7 +1,6 @@
 import QtQuick
 import Quickshell.Hyprland
 import "root:/theme"
-import Qt5Compat.GraphicalEffects
 
 Rectangle {
     id: root
