@@ -3,8 +3,8 @@ import Quickshell.Io
 import QtQuick
 import QtQuick.Layouts
 
-import "root:/widgets"
-import "root:/widgets/system"
+import "root:/modules/bar/widgets"
+import "root:/modules/bar/widgets/system"
 import "root:/theme"
 
 Scope {
@@ -51,12 +51,14 @@ Scope {
             }
         }
 
-        BarGroup {
+        MouseArea {
             anchors.right: parent.right
+            BarGroup {
 
-            Tray {}
-            Clock {
-                time: clock.date
+                Tray {}
+                Clock {
+                    time: clock.date
+                }
             }
         }
     }

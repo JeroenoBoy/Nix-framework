@@ -3,7 +3,7 @@ import QtQuick
 
 import "root:/services"
 import "root:/theme"
-import "root:/widgets"
+import "root:/modules/bar/widgets"
 
 BarItem {
     id: root

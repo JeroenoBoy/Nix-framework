@@ -1,4 +1,5 @@
 import Quickshell
+import "root:/modules/bar"
 
 Scope {
     id: root
