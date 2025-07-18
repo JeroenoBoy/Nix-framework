@@ -9,6 +9,7 @@ import "root:/theme"
 
 Scope {
     id: root
+    property ShellScreen screen
     property string time
 
     SystemClock {
@@ -16,44 +17,46 @@ Scope {
         precision: SystemClock.Minutes
     }
 
-    Variants {
-        model: Quickshell.screens
+    PanelWindow {
+        screen: screen
 
-        PanelWindow {
-            property var modelData
-            screen: modelData
+        color: "transparent"
 
-            color: "transparent"
+        anchors {
+            top: true
+            left: true
+            right: true
+        }
 
-            anchors {
-                top: true
-                left: true
-                right: true
+        implicitHeight: Theme.bar.height
+
+        margins {
+            left: 4
+            right: 4
+            top: 4
+        }
+
+        BarGroup {
+            Battery {}
+            Ram {}
+            Cpu {}
+            Storage {}
+            Temp {}
+        }
+
+        BarGroup {
+            anchors.centerIn: parent
+            Workspaces {
+                bar: root
             }
+        }
 
-            implicitHeight: Theme.bar.height
+        BarGroup {
+            anchors.right: parent.right
 
-            margins {
-                left: 4
-                right: 4
-                top: 4
-            }
-
-            BarGroup {
-                Battery {}
-                Ram {}
-                Cpu {}
-                Storage {}
-                Temp {}
-            }
-
-            BarGroup {
-                anchors.right: parent.right
-
-                Tray {}
-                Clock {
-                    time: clock.date
-                }
+            Tray {}
+            Clock {
+                time: clock.date
             }
         }
     }

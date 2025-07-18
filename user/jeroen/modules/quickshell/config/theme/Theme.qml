@@ -14,6 +14,7 @@ Singleton {
 
     readonly property alias bar: bar
     readonly property alias battery: battery
+    readonly property alias workspaces: workspaces
 
     Scope {
         id: bg
@@ -72,6 +73,35 @@ Singleton {
             id: bat_crit
             readonly property color color: "#ff0022"
             readonly property real padding: 16
+        }
+    }
+
+    Scope {
+        id: workspaces
+
+        readonly property real spacing: 4 * root.scale
+
+        readonly property alias normal: wp_default
+        readonly property alias active: wp_active
+
+        Scope {
+            id: wp_default
+            readonly property color color: "#8888aa"
+            readonly property real width: 32 * root.scale
+            readonly property real height: bar.height / 4
+            readonly property real rounding: height / 2
+            readonly property real fontSize: height
+            readonly property color fontColor: txt.color
+        }
+
+        Scope {
+            id: wp_active
+            readonly property color color: "#ccccff"
+            readonly property real width: 64 * root.scale
+            readonly property real height: bar.height / 3
+            readonly property real rounding: height / 2
+            readonly property real fontSize: height
+            readonly property color fontColor: bg.color
         }
     }
 }

@@ -14,5 +14,6 @@ Item {
     RowLayout {
         id: row
         spacing: root.spacing
+        anchors.fill: parent
     }
 }
