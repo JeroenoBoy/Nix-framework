@@ -54,7 +54,7 @@ Singleton {
         Scope {
             id: bat_normal
             readonly property color color: "transparent"
-            readonly property real padding: 8
+            readonly property real padding: 0
         }
 
         Scope {
