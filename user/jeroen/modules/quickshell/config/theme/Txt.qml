@@ -1,6 +1,6 @@
 import QtQuick
 
 Text {
-    font: Theme.txt.font
-    color: Theme.txt.color
+    font: Theme.txt.md
+    color: Theme.txt.primary
 }

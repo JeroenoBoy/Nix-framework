@@ -98,7 +98,7 @@ Singleton {
 
     Process {
         id: avgTemp
-        command: ["sh", Quickshell.configPath("scripts/cpu_temp.sh")]
+        command: ["sh", Quickshell.shellPath("scripts/cpu_temp.sh")]
         running: true
         stdout: StdioCollector {
             onStreamFinished: {

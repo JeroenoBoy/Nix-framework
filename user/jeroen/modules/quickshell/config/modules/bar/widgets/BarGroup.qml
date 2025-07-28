@@ -11,7 +11,9 @@ Item {
 
     property real paddingX: Theme.bar.paddingX
     property real paddingY: Theme.bar.paddingY
-    default property alias items: rowLayout.children
+    default property alias children: rowLayout.children
+
+    opacity: Theme.bar.opacity
 
     Rectangle {
         anchors.fill: parent

@@ -6,6 +6,7 @@ import QtQuick.Layouts
 
 import "root:/modules/bar/widgets"
 import "root:/modules/bar/widgets/system"
+import "root:/modules/startMenu"
 import "root:/theme"
 
 Scope {
@@ -13,7 +14,7 @@ Scope {
     property ShellScreen screen
     property string time
 
-    property bool startMenuOpen: false
+    property bool startMenuOpen: true
     property bool mouseOverRight: false
 
     SystemClock {
@@ -36,9 +37,9 @@ Scope {
         implicitHeight: Theme.bar.height
 
         margins {
+            top: 4
             left: 4
             right: 4
-            top: 4
         }
 
         BarGroup {
@@ -63,15 +64,17 @@ Scope {
             height: parent.height
             hoverEnabled: true
 
-            onPressed: startMenuOpen = true
+            onPressed: startMenuOpen = !startMenuOpen
             onEntered: mouseOverRight = true
             onExited: mouseOverRight = false
 
             BarGroup {
                 id: rightGroup
+
                 Tray {
                     panel: panelRoot
                 }
+
                 Clock {
                     showSeconds: startMenuOpen
                     time: clock.date
@@ -86,6 +89,13 @@ Scope {
                     easing.type: Easing.OutSine
                 }
             }
+        }
+    }
+
+    LazyLoader {
+        active: startMenuOpen
+        component: StartMenu {
+            screen: root.screen
         }
     }
 }
