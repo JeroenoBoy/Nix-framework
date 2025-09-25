@@ -37,10 +37,15 @@ Singleton {
                 let txt = this.text.match(/up\s([\w\d\s:]+)/)[1].trim();
 
                 if (/\d+:\d+$/.test(txt)) {
-                    let d = txt.match(/(\d)+:(\d)+$/);
+                    let d = txt.match(/(\d+):(\d+)$/);
                     let h = d[1];
                     let m = d[2];
-                    root.uptime = txt.replace(d[0], "") + `${h} hours ${m} minutes`;
+                    let t = txt.replace(d[0], "");
+                    if (h == 0 && t == "") {
+                        root.uptime = txt.replace(d[0], "") + `${m} minutes`;
+                    } else {
+                        root.uptime = txt.replace(d[0], "") + `${h} hours ${m} minutes`;
+                    }
                 }
             }
         }

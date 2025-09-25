@@ -14,7 +14,7 @@ Scope {
     property ShellScreen screen
     property string time
 
-    property bool startMenuOpen: true
+    property bool startMenuOpen: false
     property bool mouseOverRight: false
 
     SystemClock {
@@ -24,7 +24,7 @@ Scope {
 
     PanelWindow {
         id: panelRoot
-        screen: screen
+        screen: root.screen
 
         color: "transparent"
 

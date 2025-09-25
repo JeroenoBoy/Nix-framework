@@ -28,7 +28,7 @@ MouseArea {
             ColorAnimation {
                 property: "color"
                 target: rect
-                duration: 100
+                duration: 300
                 easing.type: Easing.OutSine
             }
         }

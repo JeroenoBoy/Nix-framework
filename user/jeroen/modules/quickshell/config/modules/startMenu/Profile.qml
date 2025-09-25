@@ -20,12 +20,24 @@ Item {
         y: 16
         implicitWidth: parent.implicitWidth - 32
 
-        spacing: 8
+        spacing: 10
 
-        Item {
+        Rectangle {
             width: 64
             height: 64
+            radius: 64
+            color: Theme.gray8
             Layout.maximumWidth: this.width
+            Rectangle {
+                width: 76
+                height: 76
+                radius: 76
+                x: -6
+                y: -6
+                color: "transparent"
+                border.width: 1
+                border.color: Theme.green2
+            }
             Image {
                 width: 64
                 height: 64
@@ -33,6 +45,8 @@ Item {
                 source: UserService.userIcon
             }
         }
+
+        Item {} // For spacing
 
         ColumnLayout {
             Txt {

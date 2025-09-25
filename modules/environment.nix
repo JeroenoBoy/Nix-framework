@@ -35,7 +35,7 @@
       inputs.zen-browser.packages."${system}".beta
 
       #Very Important
-      sl cowsay fortune asciiquarium pipes cava
+      sl cowsay fortune asciiquarium pipes cava cbonsai
 
       # Other things, for the DAP
       elixir-ls

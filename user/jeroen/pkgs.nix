@@ -13,6 +13,7 @@
 
     discord vesktop
     pandoc texliveFull
+    r2modman
 
     jetbrains-toolbox
     # devenv
@@ -28,6 +29,7 @@
     arduino-ide
     unityhub
     aseprite
+    godot
     godot-mono
 
     kdePackages.kdenlive

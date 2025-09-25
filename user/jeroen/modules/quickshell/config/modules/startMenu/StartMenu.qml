@@ -1,5 +1,4 @@
 import QtQuick
-import QtQuick.Controls
 import QtQuick.Layouts
 import Quickshell
 import Quickshell.Wayland
@@ -13,7 +12,7 @@ Scope {
 
     PanelWindow {
         id: panel
-        screen: screen
+        screen: root.screen
         color: "transparent"
 
         anchors {
@@ -60,10 +59,12 @@ Scope {
 
                 Profile {}
 
-                RowLayout {
+                GridLayout {
+                    columns: 2
                     Btn {
                         Layout.fillWidth: true
                         Layout.horizontalStretchFactor: 1
+
                         size: Theme.button.lg
                         style: Theme.button.green
                         cBackground: Theme.green2
@@ -88,13 +89,10 @@ Scope {
                         }
                     }
                 }
-                RowLayout {
+
+                ColumnLayout {
                     Slider {
-                        value: 0.5
-                        contentItem: Label {
-                            verticalAlignment: Text.AlignVCenter
-                            text: "123"
-                        }
+                        Layout.fillWidth: true
                     }
                 }
             }

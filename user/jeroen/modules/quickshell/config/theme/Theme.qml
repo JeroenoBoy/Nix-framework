@@ -17,6 +17,7 @@ Singleton {
     readonly property alias battery: battery
     readonly property alias workspaces: workspaces
     readonly property alias button: button
+    readonly property alias slider: slider
 
     readonly property color gray1: "#111122"
     readonly property color gray2: "#222233"
@@ -93,7 +94,7 @@ Singleton {
     Scope {
         id: startMenu
         readonly property real width: 500 * root.scale
-        readonly property real opacity: 0.98
+        readonly property real opacity: 0.95
         readonly property real spacing: 12 * root.scale
         readonly property real padding: 12 * root.scale
 
@@ -234,5 +235,13 @@ Singleton {
             readonly property color pressed: root.green2
             readonly property real opacity: 0.8
         }
+    }
+
+    Scope {
+        id: slider
+        readonly property real height: root.txt.md.pixelSize
+        readonly property color background_default: root.red3
+        readonly property color button_color_default: root.red3
+        readonly property color button_color_pressed: root.red2
     }
 }
