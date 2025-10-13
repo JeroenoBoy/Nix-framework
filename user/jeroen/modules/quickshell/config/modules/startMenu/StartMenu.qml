@@ -88,6 +88,38 @@ Scope {
                             text: " Bluetooth"
                         }
                     }
+                    Btn {
+                        Layout.fillWidth: true
+                        Layout.horizontalStretchFactor: 1
+                        style: CommandService.isIdlerRunning ? Theme.button.danger : Theme.button.normal
+                        size: Theme.button.lg
+                        cBackground: CommandService.isIdlerRunning ? Theme.red2 : Theme.button.normal.bg
+
+                        onPressed: {
+                            CommandService.toggleIdler();
+                        }
+
+                        Txt {
+                            font: Theme.txt.lg
+                            text: "󰥔 Lockscreen"
+                        }
+                    }
+                    Btn {
+                        Layout.fillWidth: true
+                        Layout.horizontalStretchFactor: 1
+                        style: CommandService.isWallpaperAnimated ? Theme.button.green : Theme.button.normal
+                        size: Theme.button.lg
+                        cBackground: CommandService.isWallpaperAnimated ? Theme.green2 : Theme.button.normal.bg
+
+                        onPressed: {
+                            CommandService.toggleAnimatedWallpaper();
+                        }
+
+                        Txt {
+                            font: Theme.txt.lg
+                            text: "󰋩 Wallpaper"
+                        }
+                    }
                 }
 
                 ColumnLayout {
