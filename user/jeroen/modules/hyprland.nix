@@ -28,6 +28,7 @@
         "swaync"
         "keepassxc"
         "sh ~/.sh/wallpaper.sh --listen"
+        "quickshell"
       ];
 
       env = [
