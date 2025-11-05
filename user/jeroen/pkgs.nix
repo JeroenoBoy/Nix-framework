@@ -16,7 +16,8 @@
     r2modman
 
     jetbrains-toolbox
-    # devenv
+    jetbrains.idea-ultimate
+
     gh
     keepassxc
     thunderbird
@@ -31,6 +32,8 @@
     aseprite
     godot
     godot-mono
+    obsidian
+    postman
 
     kdePackages.kdenlive
     kdePackages.qtwayland
@@ -46,7 +49,9 @@
     sushi
     gnome-tweaks
     gnome-themes-extra
+    gnome-disk-utility
     gnome-boxes
+    gnome-text-editor
     seahorse
     eog
     totem
