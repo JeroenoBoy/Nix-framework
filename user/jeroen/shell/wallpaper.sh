@@ -23,7 +23,7 @@ listen() {
 switch_wallpaper() {
     isPluggedIn=`cat /sys/class/power_supply/ACAD/online`
     isAnimatedEnabled=`cat "$animateWallpaperDir"`
-    if [[ $isPluggedIn == 1 && $isAnimatedEnabled == "y" ]]; then
+    if [[ $isPluggedIn == 1 && -f "$currentPaper/wallpaper.mp4" && $isAnimatedEnabled == "y" ]]; then
         use_mpv
     else
         use_hyprpaper
