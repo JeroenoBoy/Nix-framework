@@ -35,6 +35,8 @@
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"
         "HYPRCURSOR_THEME,rose-pine-hyprcursor"
+        "ELECTRON_OZONE_PLATFORM_HINT,wayland"
+        "NIXOS_OZONE_WL,1"
       ];
 
       general = { 
@@ -172,7 +174,7 @@
       bind = [
         "$mainMod, mouse:272, movewindow"
         #"$mainMod ALT, mouse:272, resizewindow"
-        "$mainMod CONTROL, SUPER_L, exec, eww open --toggle start_menu-closer; eww open --toggle start_menu"
+        "$mainMod CONTROL, SUPER_L, global, quickshell:toggle_start_menu"
 
         "$mainMod, Q, exec, $terminal"
         "$mainMod, E, exec, $fileManager"

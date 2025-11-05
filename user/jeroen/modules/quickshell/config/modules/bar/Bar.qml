@@ -1,6 +1,7 @@
 import Quickshell
 import Quickshell.Io
 import Quickshell.Widgets
+import Quickshell.Hyprland
 import QtQuick
 import QtQuick.Layouts
 
@@ -20,6 +21,13 @@ Scope {
     SystemClock {
         id: clock
         precision: startMenuOpen ? SystemClock.Seconds : SystemClock.Minutes
+    }
+
+    GlobalShortcut {
+        name: "toggle_start_menu"
+        onPressed: {
+            startMenuOpen = !startMenuOpen;
+        }
     }
 
     PanelWindow {
