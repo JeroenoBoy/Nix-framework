@@ -23,6 +23,10 @@ Singleton {
         lock.running = true;
     }
 
+    function sleep() {
+        sleep.running = true;
+    }
+
     Timer {
         interval: 1
         running: true
@@ -49,7 +53,7 @@ Singleton {
     Process {
         id: idlerToggle
         command: ["sh", Quickshell.shellPath("scripts/idler.sh"), "toggle"]
-        running: true
+        running: false
         stdout: StdioCollector {
             onStreamFinished: {
                 idlerStatus.running = true;
@@ -71,7 +75,7 @@ Singleton {
     Process {
         id: wallpaperToggle
         command: ["sh", Quickshell.shellPath("scripts/wallpaper.sh"), "toggle"]
-        running: true
+        running: false
         stdout: StdioCollector {
             onStreamFinished: {
                 wallpaperStatus.running = true;
@@ -82,5 +86,10 @@ Singleton {
     Process {
         id: lock
         command: ["hyprlock"]
+    }
+
+    Process {
+        id: sleep
+        command: ["systemctl sleep"]
     }
 }

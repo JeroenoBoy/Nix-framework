@@ -14,6 +14,7 @@
 
     sessionVariables = {
       "NIXOS_OZONE_WL" = 1;
+      "XWAYLAND_SCALE" = 2;
     };
 
     variables = {

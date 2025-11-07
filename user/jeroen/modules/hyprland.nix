@@ -37,6 +37,7 @@
         "HYPRCURSOR_THEME,rose-pine-hyprcursor"
         "ELECTRON_OZONE_PLATFORM_HINT,wayland"
         "NIXOS_OZONE_WL,1"
+        "XWAYLAND_SCALE,2"
       ];
 
       general = { 
@@ -115,7 +116,7 @@
 
       xwayland = {
           use_nearest_neighbor = false;
-          #force_zero_scaling = true;
+          force_zero_scaling = true;
       };
 
       plugin = {
