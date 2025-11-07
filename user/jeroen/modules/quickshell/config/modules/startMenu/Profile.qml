@@ -68,6 +68,10 @@ Item {
         IconBtn {
             style: Theme.button.blue
             text: ""
+
+            onPressed: {
+                CommandService.lock();
+            }
         }
 
         IconBtn {

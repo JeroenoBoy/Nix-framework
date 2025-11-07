@@ -19,6 +19,10 @@ Singleton {
         wallpaperToggle.running = true;
     }
 
+    function lock() {
+        lock.running = true;
+    }
+
     Timer {
         interval: 1
         running: true
@@ -73,5 +77,10 @@ Singleton {
                 wallpaperStatus.running = true;
             }
         }
+    }
+
+    Process {
+        id: lock
+        command: ["hyprlock"]
     }
 }
