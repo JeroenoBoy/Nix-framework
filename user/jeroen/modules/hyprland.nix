@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 
 {
   wayland.windowManager.hyprland = {
@@ -13,7 +13,8 @@
       "$terminal" = "kitty";
       "$fileManager" = "nautilus ~";
       "$menu" = "pkill rofi; rofi -show drun -show-icons -terminal kitty";
-      "$menu-window" = ''pkill rofi; rofi -show window -show-icons -config "~/.config/rofi/themes/windows.rasi"'';
+      "$menu-window" =
+        ''pkill rofi; rofi -show window -show-icons -config "~/.config/rofi/themes/windows.rasi"'';
       "$emoji" = "wofi-emoji --show drun";
 
       monitor = [
@@ -40,83 +41,83 @@
         "XWAYLAND_SCALE,2"
       ];
 
-      general = { 
-          gaps_in = 3;
-          gaps_out = "5,5,5,5";
-          border_size = 2;
-          "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-          "col.inactive_border" = "rgba(595959aa)";
+      general = {
+        gaps_in = 3;
+        gaps_out = "5,5,5,5";
+        border_size = 2;
+        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+        "col.inactive_border" = "rgba(595959aa)";
 
-          resize_on_border = true;
-          allow_tearing = false;
-          layout = "dwindle";
+        resize_on_border = true;
+        allow_tearing = false;
+        layout = "dwindle";
       };
 
       decoration = {
-          rounding = 10;
+        rounding = 10;
 
-          active_opacity = 1.0;
-          inactive_opacity = .97;
+        active_opacity = 1.0;
+        inactive_opacity = .97;
 
-          shadow = {
-            range = 4;
-            render_power = 3;
-            color = "rgba(1a1a1aee)";
-          };
+        shadow = {
+          range = 4;
+          render_power = 3;
+          color = "rgba(1a1a1aee)";
+        };
 
-          blur = {
-              enabled = true;
-              size = 6;
-              passes = 2;
-              vibrancy = 0.1696;
-          };
+        blur = {
+          enabled = true;
+          size = 6;
+          passes = 2;
+          vibrancy = 0.1696;
+        };
       };
 
       group = {
-          "col.border_active" = "rgba(00ff99ee) rgba(33ccffee) 45deg";
-          "col.border_inactive" = "rgba(595959aa)";
-          groupbar = {
-              enabled = true;
-              font_size = 12;
-              "col.active" = "rgba(00ff99aa)";
-              "col.inactive" = "rgba(00ee7733)";
-              height = 14;
-              indicator_height = 16;
-              indicator_gap = -14;
-              rounding = 16;
-          };
+        "col.border_active" = "rgba(00ff99ee) rgba(33ccffee) 45deg";
+        "col.border_inactive" = "rgba(595959aa)";
+        groupbar = {
+          enabled = true;
+          font_size = 12;
+          "col.active" = "rgba(00ff99aa)";
+          "col.inactive" = "rgba(00ee7733)";
+          height = 14;
+          indicator_height = 16;
+          indicator_gap = -14;
+          rounding = 16;
+        };
       };
 
       animations = {
-          enabled = true;
-          bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
-          animation = [
-            "windows, 1, 7, myBezier"
-            "windowsOut, 1, 7, default, popin 80%"
-            "border, 1, 10, default"
-            "borderangle, 1, 8, default"
-            "fade, 1, 7, default"
-            "workspaces, 1, 6, default"
-          ];
+        enabled = true;
+        bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
+        animation = [
+          "windows, 1, 7, myBezier"
+          "windowsOut, 1, 7, default, popin 80%"
+          "border, 1, 10, default"
+          "borderangle, 1, 8, default"
+          "fade, 1, 7, default"
+          "workspaces, 1, 6, default"
+        ];
       };
 
       dwindle = {
-          pseudotile = true;
-          preserve_split = true;
+        pseudotile = true;
+        preserve_split = true;
       };
 
       master = {
-          new_status = "master";
+        new_status = "master";
       };
 
-      misc = { 
-          force_default_wallpaper = 0;
-          disable_hyprland_logo = true;
+      misc = {
+        force_default_wallpaper = 0;
+        disable_hyprland_logo = true;
       };
 
       xwayland = {
-          use_nearest_neighbor = false;
-          force_zero_scaling = true;
+        use_nearest_neighbor = false;
+        force_zero_scaling = true;
       };
 
       plugin = {
@@ -146,30 +147,30 @@
       };
 
       input = {
-          kb_layout = "us";
-          kb_variant = "";
-          kb_model = "";
-          kb_options = "caps:escape";
-          kb_rules = "";
+        kb_layout = "us";
+        kb_variant = "";
+        kb_model = "";
+        kb_options = "caps:escape";
+        kb_rules = "";
 
-          follow_mouse = 1;
+        follow_mouse = 1;
 
-          sensitivity = 0;
-          force_no_accel = true;
+        sensitivity = 0;
+        force_no_accel = true;
 
-          touchpad = {
-              natural_scroll = true;
-              scroll_factor = 0.25;
-          };
+        touchpad = {
+          natural_scroll = true;
+          scroll_factor = 0.25;
+        };
       };
 
-      gestures = {
-          workspace_swipe = true;
-      };
+      gesture = [
+        "3, horizontal, workspace"
+      ];
 
       device = {
-          name = "epic-mouse-v1";
-          sensitivity = -0.5;
+        name = "epic-mouse-v1";
+        sensitivity = -0.5;
       };
 
       bind = [

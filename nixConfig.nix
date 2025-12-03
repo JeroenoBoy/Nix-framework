@@ -79,6 +79,7 @@
     "electron-31.7.7"
     "dotnet-sdk-6.0.428"
     "dotnet-runtime-6.0.36"
+    "qtwebengine-5.15.19"
   ];
 
   programs.firefox.enable = true;

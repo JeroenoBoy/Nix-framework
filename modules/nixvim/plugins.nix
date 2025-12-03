@@ -45,12 +45,14 @@
 
     neo-tree = {
       enable = true;
-      enableDiagnostics = false;
-      enableModifiedMarkers = true;
-      enableGitStatus = true;
-      closeIfLastWindow = true;
-      popupBorderStyle = "rounded";
-      window.position = "float";
+      settings = {
+        close_if_last_window = true;
+        enable_diagnostics = false;
+        enable_modified_markers = true;
+        enable_git_status = true;
+        popup_border_style = "rounded";
+        window.position = "float";
+      };
     };
 
     hop = {

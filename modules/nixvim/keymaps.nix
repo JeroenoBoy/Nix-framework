@@ -31,6 +31,11 @@
       options.desc = "File browser";
     }
     {
+      action = "<cmd>Telescope oldfiles<CR>";
+      key = "<S-TAB>";
+      options.desc = "File browser";
+    }
+    {
       action = "<cmd>HopWord<CR>";
       key = "<leader>fw";
       options.desc = "Find word";

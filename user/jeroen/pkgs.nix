@@ -4,12 +4,11 @@
     font-manager
     wofi-emoji
     hypridle
-    wcalc jq
+    jq
     hyprshot
-    thefuck
     playerctl
     alsa-utils
-    rofi-wayland
+    rofi
 
     discord vesktop
     pandoc texliveFull
@@ -58,7 +57,9 @@
     cheese
     gnome-calculator
     gnomeExtensions.blur-my-shell
-    squirreldisk
+    #squirreldisk
+    
+    onlyoffice-desktopeditors 
 
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
