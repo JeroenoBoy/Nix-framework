@@ -15,5 +15,5 @@ else
     icons_list=${icons_discharging}
 fi
 
-iconToPick=`wcalc -q "ceil(${percentage}/100*(${#icons_list}-1))"`
+iconToPick=`calc -q "ceil(${percentage}/100*(${#icons_list}-1))"`
 echo "${icons_list:${iconToPick}:1}${spacing}${percentage}%"

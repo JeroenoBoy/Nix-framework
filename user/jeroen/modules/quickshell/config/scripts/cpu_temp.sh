@@ -13,4 +13,4 @@ join_arr() {
 }
 
 printf -v joined '%s+' "${values[@]}"
-echo `wcalc -q "(${joined%+})/(1000*${#values[@]})"`
+echo `calc -q "(${joined%+})/(1000*${#values[@]})"`

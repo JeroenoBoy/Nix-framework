@@ -12,7 +12,7 @@
     alsa-utils
     rofi
 
-    wcalc
+    calc
 
     discord
     vesktop
