@@ -1,7 +1,13 @@
-{ pkgs, version, config, inputs, ... }:
+{
+  pkgs,
+  version,
+  config,
+  inputs,
+  ...
+}:
 
 {
-  imports = [ 
+  imports = [
     ./modules
     ./hardware-configuration.nix
   ];
@@ -9,7 +15,10 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Auto GC
   nix.gc = {
@@ -49,10 +58,11 @@
       layout = "us";
       options = "caps:escape";
     };
-
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
   };
+
+  services.desktopManager.cosmic.enable = true;
+  services.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
 
   qt.enable = true;
 
@@ -71,7 +81,11 @@
   users.users.jeroen = {
     isNormalUser = true;
     description = "Jeroen";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+    ];
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -110,9 +124,12 @@
     openFirewall = true;
   };
 
-  fonts.packages = with pkgs; [
-    jetbrains-mono
-  ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
+  fonts.packages =
+    with pkgs;
+    [
+      jetbrains-mono
+    ]
+    ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
   virtualisation.docker.enable = true;
   virtualisation.virtualbox = {

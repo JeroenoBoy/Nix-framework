@@ -1,4 +1,4 @@
-{...}:
+{ ... }:
 
 {
   programs.nixvim.globals.mapleader = " ";
@@ -31,6 +31,11 @@
       options.desc = "File browser";
     }
     {
+      action = "<cmd>Telescope live_grep<CR>";
+      key = "<leader>ft";
+      options.desc = "Find text";
+    }
+    {
       action = "<cmd>Telescope oldfiles<CR>";
       key = "<S-TAB>";
       options.desc = "File browser";
@@ -56,7 +61,6 @@
       key = "<leader>br";
       options.desc = "Return to the previously selected buffer";
     }
-
 
     {
       action = "";

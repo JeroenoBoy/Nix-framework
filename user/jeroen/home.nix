@@ -1,4 +1,10 @@
-{ config, pkgs, version, inputs, ... }:
+{
+  config,
+  pkgs,
+  version,
+  inputs,
+  ...
+}:
 
 let
   username = "jeroen";
@@ -9,11 +15,9 @@ in
     ./modules
   ];
 
-  nixpkgs.config.allowUnfree = true;
-
   home.username = username;
   home.homeDirectory = "/home/jeroen";
-  home.stateVersion = version; 
+  home.stateVersion = version;
 
   home.file = {
     ".config/electron-flags.conf".source = conf/electron-flags.conf;

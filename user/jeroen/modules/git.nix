@@ -1,10 +1,12 @@
-{...}:
+{ ... }:
 
 {
   programs.git = {
     enable = true;
     lfs.enable = true;
-    userName = "Jeroen van de Geest";
-    userEmail = "Jeroen@vandegeest.eu";
+    settings.user = {
+      name = "Jeroen van de Geest";
+      email = "Jeroen@vandegeest.eu";
+    };
   };
 }

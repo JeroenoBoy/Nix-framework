@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 
 {
   users.defaultUserShell = pkgs.zsh;
@@ -13,7 +13,11 @@
     ohMyZsh = {
       enable = true;
       theme = "gnzh";
-      plugins = ["git" "history" "zoxide" "thefuck"];
+      plugins = [
+        "git"
+        "history"
+        "zoxide"
+      ];
     };
   };
 }

@@ -1,6 +1,8 @@
-{pkgs, inputs, ...}: {
+{ pkgs, inputs, ... }:
+{
   home.packages = with pkgs; [
-    mpvpaper hyprpaper # Switch between the 2
+    mpvpaper
+    hyprpaper # Switch between the 2
     font-manager
     wofi-emoji
     hypridle
@@ -10,8 +12,12 @@
     alsa-utils
     rofi
 
-    discord vesktop
-    pandoc texliveFull
+    wcalc
+
+    discord
+    vesktop
+    pandoc
+    texliveFull
     r2modman
 
     jetbrains-toolbox
@@ -40,7 +46,8 @@
     prismlauncher
 
     yt-dlp
-    jellyfin-media-player feishin
+    jellyfin-media-player
+    feishin
     spotify
     pwvucontrol
 
@@ -58,8 +65,8 @@
     gnome-calculator
     gnomeExtensions.blur-my-shell
     #squirreldisk
-    
-    onlyoffice-desktopeditors 
+
+    onlyoffice-desktopeditors
 
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
