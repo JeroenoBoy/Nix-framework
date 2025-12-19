@@ -58,6 +58,7 @@
     gnome-disk-utility
     gnome-boxes
     gnome-text-editor
+    gnome-clocks
     seahorse
     eog
     totem

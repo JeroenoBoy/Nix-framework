@@ -7,7 +7,7 @@ import QtQuick
 Singleton {
     id: root
 
-    readonly property double scale: 1
+    readonly property double scale: 0.8
 
     readonly property alias bg: bg
     readonly property alias txt: txt
