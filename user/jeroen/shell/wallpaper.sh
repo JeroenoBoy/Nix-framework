@@ -5,8 +5,12 @@ animateWallpaperDir="$HOME/.cache/animateWallpaper.txt"
 regexp="^KERNEL\s*\[\d*\.\d*\]\s*(add|remove) *[\w/]* *\(usb_power_delivery\)$"
 
 hyprpaperConfig="
-preload = @WALLPAPER@/wallpaper.png
-wallpaper = , @WALLPAPER@/wallpaper.png
+wallpaper {
+  monitor =
+  path = @WALLPAPER@/wallpaper.png
+  fit_mode = cover
+}
+splash = false
 "
 
 currentType=""

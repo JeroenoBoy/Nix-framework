@@ -2,15 +2,15 @@
   description = "LaiOS: My nix config";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     nixos-hardware.url = "github:NixOs/nixos-hardware/master";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nixvim = {
-      url = "github:nix-community/nixvim/nixos-25.11";
+      url = "github:nix-community/nixvim/nixos-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
@@ -36,7 +36,7 @@
     }@inputs:
     let
       system = "x86_64-linux";
-      version = "25.11";
+      version = "26.05";
     in
     {
       nixosConfigurations = {

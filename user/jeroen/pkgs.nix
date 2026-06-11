@@ -20,9 +20,6 @@
     texliveFull
     r2modman
 
-    jetbrains-toolbox
-    jetbrains.idea-ultimate
-
     gh
     keepassxc
     thunderbird
@@ -31,7 +28,6 @@
     nicotine-plus
     libnotify
     krita
-    brave
     arduino-ide
     unityhub
     aseprite
@@ -59,14 +55,16 @@
     gnome-boxes
     gnome-text-editor
     gnome-clocks
+    darktable
     seahorse
     eog
     totem
     cheese
     gnome-calculator
     gnomeExtensions.blur-my-shell
-    #squirreldisk
+    solitaire-tui
 
+    gparted
     onlyoffice-desktopeditors
 
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default

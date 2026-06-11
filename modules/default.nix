@@ -1,14 +1,17 @@
-{...}:
+{ ... }:
 
 {
   imports = [
     ./nixvim
     ./environment.nix
     ./flatpak.nix
+    ./hyprland.nix
+    ./intellij.nix
+    ./k8s.nix
     ./nh.nix
-    ./zsh.nix
-    ./steam.nix
     ./rider.nix
+    ./steam.nix
+    ./zsh.nix
   ];
 
 }

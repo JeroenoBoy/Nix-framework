@@ -1,12 +1,10 @@
-{...}:
+{ ... }:
 
 {
   imports = [
-    ./eww
     ./quickshell
     ./gtk.nix
     ./hypridle.nix
-    ./hyprland.nix
     ./hyprlock.nix
     ./kitty.nix
     ./swaync.nix

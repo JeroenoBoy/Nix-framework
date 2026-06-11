@@ -21,6 +21,7 @@ in
 
   home.file = {
     ".config/electron-flags.conf".source = conf/electron-flags.conf;
+    ".config/hypr/hyprland.lua".source = conf/hyprland.lua;
     ".sh/" = {
       source = ./shell;
       recursive = true;

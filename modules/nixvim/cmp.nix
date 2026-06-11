@@ -1,4 +1,4 @@
-{...}:
+{ ... }:
 
 {
   programs.nixvim.plugins = {
@@ -10,7 +10,6 @@
       };
     };
 
-    cmp-emoji.enable = true;
     cmp-nvim-lsp.enable = true;
     cmp-buffer.enable = true;
     cmp-path.enable = true;
@@ -29,12 +28,17 @@
         };
 
         snippet.expand = "function(args) require('luasnip').lsp_expand(args.body) end";
-        formatting = { fields = [ "kind" "abbr" "menu" ]; };
+        formatting = {
+          fields = [
+            "kind"
+            "abbr"
+            "menu"
+          ];
+        };
         sources = [
           { name = "nvim_lsp"; }
           { name = "dap"; }
           { name = "treesitter"; }
-          { name = "emoji"; }
           {
             name = "buffer"; # text within current buffer
             option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
@@ -51,8 +55,12 @@
         ];
 
         window = {
-          completion = { border = "solid"; };
-          documentation = { border = "solid"; };
+          completion = {
+            border = "solid";
+          };
+          documentation = {
+            border = "solid";
+          };
         };
 
         mapping = {

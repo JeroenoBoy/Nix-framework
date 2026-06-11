@@ -31,7 +31,6 @@
   networking = {
     hostName = "LaiOS";
     networkmanager.enable = true;
-    wireless.iwd.enable = true;
   };
 
   # Set your time zone.
@@ -84,6 +83,7 @@
       "networkmanager"
       "wheel"
       "docker"
+      "kubernetes"
     ];
   };
 
@@ -95,7 +95,6 @@
     "qtwebengine-5.15.19"
   ];
 
-  programs.firefox.enable = true;
   programs.hyprland.enable = true;
   programs.ssh.enableAskPassword = false;
 
@@ -130,7 +129,15 @@
     ]
     ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
-  virtualisation.docker.enable = true;
+  virtualisation.docker = {
+    enable = true;
+    daemon.settings = {
+      insecure-registries = [
+        "172.26.0.1:5000"
+      ];
+    };
+  };
+
   virtualisation.virtualbox = {
     host.enable = true;
     host.addNetworkInterface = false;
